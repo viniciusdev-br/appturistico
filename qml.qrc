@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>media/icen.jpeg</file>
+        <file>media/mirante-do-rio.mp4</file>
+        <file>Popups.qml</file>
+        <file>Pontos.qml</file>
+    </qresource>
+</RCC>
