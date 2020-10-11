@@ -1,0 +1,19 @@
+[{
+    "latitude": -1.475107,
+    "longitude": -48.456111,
+    "nome": "ICEN",
+    "imagem": "/media/icen"
+},
+{
+    "latitude": -1.4772138,
+    "longitude": -48.4564629,
+    "nome": "Mirante",
+    "imagem":"/media/mirante"
+},
+{
+    "latitude": -1.4773023,
+    "longitude": -48.4554115,
+    "nome": "Capela",
+    "imagem": "/media/capela"
+}
+]

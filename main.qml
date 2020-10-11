@@ -14,17 +14,14 @@ ApplicationWindow {
     title: qsTr("Aplicativo Geoturístico")
     property string local: ""
 
-    //Texto abaixo das mídias
-    function conteudoText(local){
-        var media = {
-            icen: 'Esse texto vem da lista js para o icen<br> Assim como esse outros viram <br> Iram descrever o monumento', capela: "Texto da capela", mirante: "Ultimo para o mirante"
-        }
-        if (local === "icen"){
-            return media.icen
-        }else if (local === "mirante"){
-            return mirante.mirante
-        }else if (local === "capela"){
-            return capela.capela
+    Component.onCompleted: {
+        var xhr = new XMLHttpRequest;
+        xhr.open('GET', 'Dados.json');
+        xhr.onreadystatechange = function() {
+            if ( xhr.resadyState === XMLHttpRequest.DONE ){
+                var data = JSON.parse(xhr.responseText);
+
+            }
         }
     }
 
