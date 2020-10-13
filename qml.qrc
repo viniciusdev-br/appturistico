@@ -3,7 +3,6 @@
         <file>main.qml</file>
         <file>media/icen.jpeg</file>
         <file>media/mirante-do-rio.mp4</file>
-        <file>Popups.qml</file>
         <file>Dados.json</file>
     </qresource>
 </RCC>

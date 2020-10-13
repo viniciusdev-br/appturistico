@@ -2,7 +2,7 @@
     "latitude": -1.475107,
     "longitude": -48.456111,
     "nome": "ICEN",
-    "imagem": "<img src=\"media/icen.jpeg\">"
+    "imagem": "'<img src=\"/media/icen.jpeg\">'"
 },
 {
     "latitude": -1.4772138,
