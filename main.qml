@@ -13,8 +13,13 @@ ApplicationWindow {
     visible: true
     title: qsTr("Aplicativo Geoturístico")
     property string local: ""
-    property string imagem: ""
-    property int posicao: 0
+    property string image: ""
+    property string sobre: ""
+
+    function exibir(localidade, midia){
+        local = localidade;
+        image = midia;
+    }
 
     Plugin{id: mapUniversidade; name: "osm"}
 
@@ -59,7 +64,7 @@ ApplicationWindow {
                     radius: 50
                     MouseArea{
                         anchors.fill: parent
-                        onClicked: {popup.open(); local = model.nome; imagem = model.imagem; console.log(imagem)}
+                        onClicked: {popup.open(); exibir(model.nome, model.imagem)}
                     }
                 }
             }
@@ -70,17 +75,18 @@ ApplicationWindow {
 
     Popup{
         id: popup
-        width: 300; height: 300
+        width: 273; height: 300
         modal: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
         padding: 0
         anchors.centerIn: parent
-        onOpened: console.log(imagem)
-        ListView{
-            anchors.fill: parent
-            model: model
-            Text { text: '<b>Imagem: </b> ' + imagem}
-
+        Column{
+            Image {
+                source: image
+            }
+            Text {
+                text: local
+            }
         }
     }
 }

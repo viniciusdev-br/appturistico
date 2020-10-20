@@ -4,5 +4,11 @@
         <file>media/icen.jpeg</file>
         <file>media/mirante-do-rio.mp4</file>
         <file>Dados.json</file>
+        <file>media/capela.jpeg</file>
+        <file>media/capela2.jpg</file>
+        <file>media/icen2.jpg</file>
+        <file>media/mirante.jpeg</file>
+        <file>media/mirante.jpg</file>
+        <file>media/mirante2.jpg</file>
     </qresource>
 </RCC>

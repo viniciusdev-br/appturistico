@@ -1,19 +1,18 @@
 [{
     "latitude": -1.475107,
     "longitude": -48.456111,
-    "nome": "ICEN",
-    "imagem": "'<img src=\"/media/icen.jpeg\">'"
+    "nome": "Uma breve drescrição sobre o ICEN",
+    "imagem": "media/icen"
 },
 {
     "latitude": -1.4772138,
     "longitude": -48.4564629,
-    "nome": "Mirante",
-    "imagem": "<img src=\"/media/mirante.jpeg\">"
+    "nome": "Uma breve drescrição sobre o Mirante",
+    "imagem": "media/mirante"
 },
 {
     "latitude": -1.4773023,
     "longitude": -48.4554115,
-    "nome": "Capela",
-    "imagem": "<img src=\"/media/capela.jpeg\">"
-}
-]
+    "nome": "Uma breve drescrição sobre a Capela",
+    "imagem": "media/capela"
+}]
