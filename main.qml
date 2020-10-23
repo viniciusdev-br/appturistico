@@ -14,11 +14,12 @@ ApplicationWindow {
     title: qsTr("Aplicativo Geoturístico")
     property string local: ""
     property string image: ""
-    property string sobre: ""
+    property string nome: ""
 
-    function exibir(localidade, midia){
+    function exibir(localidade, midia, nomes){
         local = localidade;
         image = midia;
+        nome = nomes
     }
 
     Plugin{id: mapUniversidade; name: "osm"}
@@ -36,7 +37,8 @@ ApplicationWindow {
                     model.append({
                         latitude: data[i]['latitude'],
                         longitude: data[i]['longitude'],
-                        nome: data[i]['nome'],
+                        titulo: data[i]['titulo'],
+                        descricao: data[i]['descricao'],
                         imagem: data[i]['imagem']
                     });
                 }
@@ -52,6 +54,7 @@ ApplicationWindow {
         center: QtPositioning.coordinate(-1.475107, -48.456111)
         zoomLevel: 16
         Instantiator {
+            //Cria os mapCircles a partir do model
             model: model
             delegate:
             MapItemGroup {
@@ -64,7 +67,7 @@ ApplicationWindow {
                     radius: 50
                     MouseArea{
                         anchors.fill: parent
-                        onClicked: {popup.open(); exibir(model.nome, model.imagem)}
+                        onClicked: {popup.open(); exibir(model.descricao, model.imagem, model.titulo)}
                     }
                 }
             }
@@ -81,10 +84,20 @@ ApplicationWindow {
         padding: 0
         anchors.centerIn: parent
         Column{
+            Text {
+                color: "#c2723c"
+                font.family: "Dyuthi"
+                font.pointSize: 23
+                width: popup.width
+                horizontalAlignment: Text.AlignHCenter
+                text: nome
+            }
             Image {
                 source: image
             }
-            Text {
+            Text{
+                width: popup.width
+                wrapMode: Text.WrapAnywhere
                 text: local
             }
         }
