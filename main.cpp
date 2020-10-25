@@ -3,6 +3,7 @@
 #include <QQuickView>
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
+#include <QQuickStyle>
 int main(int argc, char *argv[])
 {
 //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -18,6 +19,7 @@ int main(int argc, char *argv[])
 //    }, Qt::QueuedConnection);
 //    engine.load(url);
     QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle("Material");
     QQuickView view;
 
     view.setSource(QUrl("qrc:/main.qml"));

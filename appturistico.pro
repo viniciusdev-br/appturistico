@@ -1,5 +1,6 @@
 QT += quick
-
+QT += quickcontrols2
+OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
 
 # You can make your code fail to compile if it uses deprecated APIs.
@@ -26,3 +27,6 @@ contains(ANDROID_TARGET_ARCH,) {
     ANDROID_ABIS = \
         armeabi-v7a
 }
+
+ANDROID_ABIS = armeabi-v7a
+android: include(/home/vinicius/Android/Sdk/android_openssl/openssl.pri)

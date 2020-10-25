@@ -6,10 +6,12 @@ import QtQuick.Controls 2.12
 import QtMultimedia 5.12
 import QtQml 2.12
 import QtQuick.Layouts 1.12
+import QtQuick.Controls.Material 2.12
 ApplicationWindow {
+    Material.theme: Material.System
     id: page
-    width: 640
-    height: 480
+    width: Qt.platform.os == "android" ? Screen.width : 720
+    height: Qt.platform.os == "android" ? Screen.height : 1280
     visible: true
     title: qsTr("Aplicativo Geoturístico")
     property string local: ""
@@ -21,9 +23,7 @@ ApplicationWindow {
         image = midia;
         nome = nomes
     }
-
     Plugin{id: mapUniversidade; name: "osm"}
-
     ListModel{ id: model }
 
     Component.onCompleted: {
@@ -78,7 +78,7 @@ ApplicationWindow {
 
     Popup{
         id: popup
-        width: 273; height: 300
+        width: page.width*0.70; height: page.height*0.60
         modal: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
         padding: 0
@@ -87,18 +87,33 @@ ApplicationWindow {
             Text {
                 color: "#c2723c"
                 font.family: "Dyuthi"
-                font.pointSize: 23
+                font.pointSize: 30
                 width: popup.width
+                bottomPadding: 20; topPadding: 20
                 horizontalAlignment: Text.AlignHCenter
                 text: nome
             }
-            Image {
-                source: image
-            }
-            Text{
+            Rectangle{
+                color: "red"
                 width: popup.width
-                wrapMode: Text.WrapAnywhere
-                text: local
+                height: 300
+                Image {
+                    width: popup.width;
+                    height: parent.height
+                    horizontalAlignment: Image.horizontalHCenter
+                    id:imagempopup
+                    source: image
+                }
+            }
+            ScrollView{
+                Text{
+                    topPadding: 5
+                    leftPadding: 10
+                    width: popup.width
+                    height: imagempopup.height*1.5
+                    wrapMode: Text.WordWrap
+                    text: local
+                }
             }
         }
     }
