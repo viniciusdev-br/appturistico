@@ -106,15 +106,21 @@ ApplicationWindow {
                 }
             }
             ScrollView{
-                Text{
+//                ScrollBar.vertical.interactive: true
+                id: scroll
+                width: imagempopup.width
+                height: imagempopup.height
+                clip: true
+                Label{
                     topPadding: 5
                     leftPadding: 10
-                    width: popup.width
-                    height: imagempopup.height*1.5
+                    width: imagempopup.width
+                    height: parent.height
                     wrapMode: Text.WordWrap
                     text: local
                 }
             }
+
         }
     }
 }

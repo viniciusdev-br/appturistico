@@ -4,6 +4,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
 #include <QQuickStyle>
+#include <QtWebView>
 int main(int argc, char *argv[])
 {
 //    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
 //    }, Qt::QueuedConnection);
 //    engine.load(url);
     QGuiApplication app(argc, argv);
+    QtWebView::initialize();
     QQuickStyle::setStyle("Material");
     QQuickView view;
 
