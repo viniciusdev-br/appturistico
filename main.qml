@@ -15,8 +15,8 @@ ApplicationWindow {
     height: Qt.platform.os == "android" ? Screen.height : 1280
     visible: true
     title: qsTr("Aplicativo Geoturístico")
-
     property url site: ""
+
     Plugin{id: mapUniversidade; name: "osm"}
     ListModel{ id: model }
 
@@ -32,8 +32,7 @@ ApplicationWindow {
                         latitude: data[i]['latitude'],
                         longitude: data[i]['longitude'],
                         titulo: data[i]['titulo'],
-                        descricao: data[i]['descricao'],
-                        imagem: data[i]['imagem']
+                        descricao: data[i]['descricao']
                     });
                 }
             }

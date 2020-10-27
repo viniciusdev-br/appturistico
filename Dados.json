@@ -2,21 +2,17 @@
     "latitude": -1.475107,
     "longitude": -48.456111,
     "titulo": "ICEN",
-    "descricao": "file:///home/vinicius/Documentos/GitHub/appturistico/contentpopup.html",
-    "imagem": "media/icen"
+    "descricao": "/home/vinicius/Documentos/GitHub/appturistico/icen.html",
 },
 {
     "latitude": -1.4772138,
     "longitude": -48.4564629,
     "titulo": "Mirante",
-    "descricao": "  Uma breve drescrição sobre o <b>Mirante</b>.Lorem ipsum at pulvinar et netus vivamus eleifend posuere integer, libero nullam senectus pulvinar ipsum tortor porta sollicitudin, varius fringilla mauris suscipit torquent dapibus tincidunt ac. per ut porta tempus aenean massa integer aliquam volutpat, orci scelerisque metus felis ipsum nostra aenean vel, erat litora nostra gravida aliquam proin morbi. ",
-    "imagem": "media/mirante",
-    "video": "media/mirante-do-rio.mp4"
+    "descricao": "/home/vinicius/Documentos/GitHub/appturistico/mirante.html",
 },
 {
     "latitude": -1.4773023,
     "longitude": -48.4554115,
     "titulo": "Capela",
-    "descricao": "  Uma breve drescrição sobre a <b>Capela</b>.Lorem ipsum at pulvinar et netus vivamus eleifend posuere integer, libero nullam senectus pulvinar ipsum tortor porta sollicitudin, varius fringilla mauris suscipit torquent dapibus tincidunt ac. per ut porta tempus aenean massa integer aliquam volutpat, orci scelerisque metus felis ipsum nostra aenean vel, erat litora nostra gravida aliquam proin morbi. ",
-    "imagem": "media/capela"
+    "descricao": "/home/vinicius/Documentos/GitHub/appturistico/mirante.html",
 }]

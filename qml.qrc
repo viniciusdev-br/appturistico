@@ -10,6 +10,8 @@
         <file>media/mirante.jpeg</file>
         <file>media/mirante.jpg</file>
         <file>media/mirante2.jpg</file>
-        <file>contentpopup.html</file>
+        <file>icen.html</file>
+        <file>capela.html</file>
+        <file>mirante.html</file>
     </qresource>
 </RCC>
