@@ -7,6 +7,7 @@ import QtMultimedia 5.12
 import QtQml 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
+import QtWebView 1.1
 ApplicationWindow {
     Material.theme: Material.System
     id: page
@@ -14,15 +15,8 @@ ApplicationWindow {
     height: Qt.platform.os == "android" ? Screen.height : 1280
     visible: true
     title: qsTr("Aplicativo Geoturístico")
-    property string local: ""
-    property string image: ""
-    property string nome: ""
 
-    function exibir(localidade, midia, nomes){
-        local = localidade;
-        image = midia;
-        nome = nomes
-    }
+    property url site: ""
     Plugin{id: mapUniversidade; name: "osm"}
     ListModel{ id: model }
 
@@ -67,7 +61,11 @@ ApplicationWindow {
                     radius: 50
                     MouseArea{
                         anchors.fill: parent
-                        onClicked: {popup.open(); exibir(model.descricao, model.imagem, model.titulo)}
+                        onClicked: {
+                            popup.open();
+                            site = model.descricao;
+                            console.log(site)
+                        }
                     }
                 }
             }
@@ -83,44 +81,10 @@ ApplicationWindow {
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
         padding: 0
         anchors.centerIn: parent
-        Column{
-            Text {
-                color: "#c2723c"
-                font.family: "Dyuthi"
-                font.pointSize: 30
-                width: popup.width
-                bottomPadding: 20; topPadding: 20
-                horizontalAlignment: Text.AlignHCenter
-                text: nome
-            }
-            Rectangle{
-                color: "red"
-                width: popup.width
-                height: 300
-                Image {
-                    width: popup.width;
-                    height: parent.height
-                    horizontalAlignment: Image.horizontalHCenter
-                    id:imagempopup
-                    source: image
-                }
-            }
-            ScrollView{
-//                ScrollBar.vertical.interactive: true
-                id: scroll
-                width: imagempopup.width
-                height: imagempopup.height
-                clip: true
-                Label{
-                    topPadding: 5
-                    leftPadding: 10
-                    width: imagempopup.width
-                    height: parent.height
-                    wrapMode: Text.WordWrap
-                    text: local
-                }
-            }
-
+        WebView{
+            anchors.fill: parent
+            id:pagweb
+            url: site
         }
     }
 }
