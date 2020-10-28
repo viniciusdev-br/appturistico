@@ -77,7 +77,7 @@ ApplicationWindow {
         id: popup
         width: page.width*0.70; height: page.height*0.60
         modal: true
-        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutsideParent
+        closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         padding: 0
         anchors.centerIn: parent
         WebView{
