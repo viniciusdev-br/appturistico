@@ -53,12 +53,13 @@ ApplicationWindow {
             MapItemGroup {
                 id: delegateGroup
                 MapCircle {
-                    color: "lightgreen"
+                    color: "gray"
                     opacity: 0.5
                     border.width: 0
                     center: QtPositioning.coordinate(model.latitude, model.longitude)
                     radius: 50
                     MouseArea{
+                        enabled: false
                         anchors.fill: parent
                         onClicked: {
                             popup.open();
@@ -70,6 +71,18 @@ ApplicationWindow {
             }
             onObjectAdded: map.addMapItemGroup(object)
             onObjectRemoved: map.removeMapItemGroup(object)
+        }
+        PositionSource{
+            id: posicaoDispositivo
+            active: true
+            updateInterval: 1000
+            onPositionChanged: {
+                posicaoDispositivo.start()
+                var raio = 0
+                var coordenada = posicaoDispositivo.position.coordinate;
+                console.log("Coordenadas: " + coordenada.latitude, coordenada.longitude);
+                raio = posicaoDispositivo.distanceTo(QtPositioning.coordinate(model.latitude, model.longitude))
+            }
         }
     }
 
