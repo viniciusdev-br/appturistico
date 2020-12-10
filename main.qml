@@ -9,7 +9,6 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
 import QtWebView 1.1
 ApplicationWindow {
-    //Definindo a base so Layout
     Material.theme: Material.System
     id: page
     width: Qt.platform.os == "android" ? Screen.width : 720
@@ -22,7 +21,6 @@ ApplicationWindow {
     ListModel{ id: modelTurismo }
 
     Component.onCompleted: {
-        //Fazendo conexão com o json
         var xhr = new XMLHttpRequest;
         xhr.open("GET", 'Dados.json');
         xhr.onreadystatechange = function() {
@@ -43,7 +41,6 @@ ApplicationWindow {
     }
 
     Map{
-        //criando o mamapa com inicio na UFPA
         id: map
         anchors.fill: parent
         plugin: mapUniversidade
@@ -77,7 +74,6 @@ ApplicationWindow {
             onObjectRemoved: map.removeMapItemGroup(object)
         }
         PositionSource{
-            //Propriedade que retorna valores como a posição do dispositivo
             id: posicaoDispositivo
             active: true
             updateInterval: 1000
@@ -99,7 +95,6 @@ ApplicationWindow {
     }
 
     Popup{
-        //Abertura do Popup para exibir mídias em HTML5
         id: popup
         width: page.width*0.70; height: page.height*0.60
         modal: true
