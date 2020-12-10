@@ -85,7 +85,7 @@ ApplicationWindow {
                 for(var child = 0; child < modelTurismo.rowCount(); child++){
                     console.log(coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)));
                     console.log(modelTurismo.get(child).titulo);
-                    if (coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)) < 50){
+                    if (coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)) < 100){
                         console.log('O raio entre o dispositivo está dentro do alcance, enable mouseArea...');
 
                     }
