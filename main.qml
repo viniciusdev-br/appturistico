@@ -1,4 +1,4 @@
-﻿import QtQuick 2.12
+import QtQuick 2.12
 import QtLocation 5.12
 import QtPositioning 5.12
 import QtQuick.Window 2.12
@@ -18,6 +18,7 @@ ApplicationWindow {
     property url site: ""
 
     Plugin{id: mapUniversidade; name: "osm"}
+
     ListModel{ id: modelTurismo }
     ListModel{ id: positionMapCircle}
 
@@ -49,13 +50,12 @@ ApplicationWindow {
         zoomLevel: 16
         Instantiator {
             //Cria os mapCircles a partir do model
-            id: mapInstatiator
+//            id: mapInstatiator
             model: modelTurismo
             delegate:
             MapItemGroup {
                 id: delegateGroup
                 MapCircle {
-                    id: monumentos
                     color: "gray"
                     opacity: 0.5
                     border.width: 0
@@ -81,11 +81,14 @@ ApplicationWindow {
             updateInterval: 1000
             onPositionChanged: {
                 posicaoDispositivo.start()
+                var raio = 0
                 var coordenada = posicaoDispositivo.position.coordinate;
                 console.log("Coordenadas: " + coordenada.latitude, coordenada.longitude);
+
                 //posicaoDispositivo.distanceTo(QtPositioning.coordinate(model.latitude, model.longitude))
-                for(var child = 0; child < delegateGroup.count(); child++){
-                    console.log(coordenada.distanceTo(QtPositioning.coordinate(monumentos.get(child).center)));
+                for(var child = 0; child < modelTurismo.rowCount(); child++){
+//                    console.log(coordenada.distanceTo(QtPositioning.coordinate(monumentos.get(child).center)));
+                    console.log(coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)));
                     console.log(modelTurismo.get(child).titulo);
                     if (coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)) < 100){
                         console.log('O raio entre o dispositivo está dentro do alcance, enable mouseArea...');
