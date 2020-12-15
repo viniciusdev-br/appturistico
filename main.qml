@@ -20,7 +20,7 @@ ApplicationWindow {
     Plugin{id: mapUniversidade; name: "osm"}
 
     ListModel{ id: model }
-//    ListModel{ id: positionMapCircle}
+    ListModel{ id: positionMapCircle}
 
     Component.onCompleted: {
         var xhr = new XMLHttpRequest;
@@ -56,6 +56,7 @@ ApplicationWindow {
             MapItemGroup {
                 id: delegateGroup
                 MapCircle {
+                    id: pontosTuristicos
                     color: "gray"
                     opacity: 0.5
                     border.width: 0
@@ -94,6 +95,9 @@ ApplicationWindow {
                         console.log('O raio entre o dispositivo está dentro do alcance, enable mouseArea...');
 
                     }
+                }
+                for(var i=0; i < delegateGroup.count(); i++){
+                    console.log(pontosTuristicos.center);
                 }
             }
         }
