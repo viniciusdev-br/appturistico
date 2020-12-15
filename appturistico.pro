@@ -1,6 +1,7 @@
 QT += quick
 QT += quickcontrols2
 QT += webview
+QT += qml
 OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
 

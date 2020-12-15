@@ -19,6 +19,7 @@ ApplicationWindow {
 
     Plugin{id: mapUniversidade; name: "osm"}
     ListModel{ id: modelTurismo }
+    ListModel{ id: positionMapCircle}
 
     Component.onCompleted: {
         var xhr = new XMLHttpRequest;
@@ -41,13 +42,14 @@ ApplicationWindow {
     }
 
     Map{
-        id: map
+        id: mapufpa
         anchors.fill: parent
         plugin: mapUniversidade
         center: QtPositioning.coordinate(-1.475107, -48.456111)
         zoomLevel: 16
         Instantiator {
             //Cria os mapCircles a partir do model
+            id: mapInstatiator
             model: modelTurismo
             delegate:
             MapItemGroup {
@@ -65,13 +67,13 @@ ApplicationWindow {
                         onClicked: {
                             popup.open();
                             site = modelTurismo.descricao;
-                            console.log(site)
+                            console.log("localizaçãssssssssssssssssssssssssssssssssssssssssso" + site)
                         }
                     }
                 }
             }
-            onObjectAdded: map.addMapItemGroup(object)
-            onObjectRemoved: map.removeMapItemGroup(object)
+            onObjectAdded: mapufpa.addMapItemGroup(object)
+            onObjectRemoved: mapufpa.removeMapItemGroup(object)
         }
         PositionSource{
             id: posicaoDispositivo
@@ -82,8 +84,8 @@ ApplicationWindow {
                 var coordenada = posicaoDispositivo.position.coordinate;
                 console.log("Coordenadas: " + coordenada.latitude, coordenada.longitude);
                 //posicaoDispositivo.distanceTo(QtPositioning.coordinate(model.latitude, model.longitude))
-                for(var child = 0; child < modelTurismo.rowCount(); child++){
-                    console.log(coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)));
+                for(var child = 0; child < delegateGroup.count(); child++){
+                    console.log(coordenada.distanceTo(QtPositioning.coordinate(monumentos.get(child).center)));
                     console.log(modelTurismo.get(child).titulo);
                     if (coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)) < 100){
                         console.log('O raio entre o dispositivo está dentro do alcance, enable mouseArea...');

@@ -3,6 +3,7 @@
 #include <QQuickView>
 #include <QQmlApplicationEngine>
 #include <QQmlComponent>
+#include <QtQml>
 #include <QQuickStyle>
 #include <QtWebView>
 int main(int argc, char *argv[])
