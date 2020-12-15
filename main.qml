@@ -19,8 +19,8 @@ ApplicationWindow {
 
     Plugin{id: mapUniversidade; name: "osm"}
 
-    ListModel{ id: modelTurismo }
-    ListModel{ id: positionMapCircle}
+    ListModel{ id: model }
+//    ListModel{ id: positionMapCircle}
 
     Component.onCompleted: {
         var xhr = new XMLHttpRequest;
@@ -28,9 +28,9 @@ ApplicationWindow {
         xhr.onreadystatechange = function() {
             if ( xhr.readyState === XMLHttpRequest.DONE ){
                 var data = JSON.parse(xhr.responseText);
-                modelTurismo.clear();
+                model.clear();
                 for (var i in data){
-                    modelTurismo.append({
+                    model.append({
                         latitude: data[i]['latitude'],
                         longitude: data[i]['longitude'],
                         titulo: data[i]['titulo'],
@@ -51,7 +51,7 @@ ApplicationWindow {
         Instantiator {
             //Cria os mapCircles a partir do model
 //            id: mapInstatiator
-            model: modelTurismo
+            model: model
             delegate:
             MapItemGroup {
                 id: delegateGroup
@@ -59,15 +59,15 @@ ApplicationWindow {
                     color: "gray"
                     opacity: 0.5
                     border.width: 0
-                    center: QtPositioning.coordinate(modelTurismo.latitude, modelTurismo.longitude)
+                    center: QtPositioning.coordinate(model.latitude, model.longitude)
                     radius: 50
                     MouseArea{
-                        enabled: false
+                        enabled: true
                         anchors.fill: parent
                         onClicked: {
                             popup.open();
-                            site = modelTurismo.descricao;
-                            console.log("localizaçãssssssssssssssssssssssssssssssssssssssssso" + site)
+                            site = model.descricao;
+                            console.log(site)
                         }
                     }
                 }
@@ -86,11 +86,11 @@ ApplicationWindow {
                 console.log("Coordenadas: " + coordenada.latitude, coordenada.longitude);
 
                 //posicaoDispositivo.distanceTo(QtPositioning.coordinate(model.latitude, model.longitude))
-                for(var child = 0; child < modelTurismo.rowCount(); child++){
+                for(var child = 0; child < model.rowCount(); child++){
 //                    console.log(coordenada.distanceTo(QtPositioning.coordinate(monumentos.get(child).center)));
-                    console.log(coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)));
-                    console.log(modelTurismo.get(child).titulo);
-                    if (coordenada.distanceTo(QtPositioning.coordinate(modelTurismo.get(child).latitude, modelTurismo.get(child).longitude)) < 100){
+                    console.log(coordenada.distanceTo(QtPositioning.coordinate(model.get(child).latitude, model.get(child).longitude)));
+                    console.log(model.get(child).titulo);
+                    if (coordenada.distanceTo(QtPositioning.coordinate(model.get(child).latitude, model.get(child).longitude)) < 100){
                         console.log('O raio entre o dispositivo está dentro do alcance, enable mouseArea...');
 
                     }
