@@ -50,11 +50,13 @@ ApplicationWindow {
         zoomLevel: 16
         Instantiator {
             //Cria os mapCircles a partir do model
-//            id: mapInstatiator
             model: model
             delegate:
             MapItemGroup {
                 id: delegateGroup
+                property alias color: pontosTuristicos.color
+                property alias center: pontosTuristicos.center
+                property alias habilitar: pontosTuristicos.habilitar
                 MapCircle {
                     id: pontosTuristicos
                     color: "gray"
@@ -62,8 +64,10 @@ ApplicationWindow {
                     border.width: 0
                     center: QtPositioning.coordinate(model.latitude, model.longitude)
                     radius: 50
+                    property alias habilitar: toqueTurismo.enabled
                     MouseArea{
-                        enabled: true
+                        id: toqueTurismo
+                        enabled: false
                         anchors.fill: parent
                         onClicked: {
                             popup.open();
@@ -82,23 +86,29 @@ ApplicationWindow {
             updateInterval: 1000
             onPositionChanged: {
                 posicaoDispositivo.start()
-                var raio = 0
                 var coordenada = posicaoDispositivo.position.coordinate;
-                console.log("Coordenadas: " + coordenada.latitude, coordenada.longitude);
-
-                //posicaoDispositivo.distanceTo(QtPositioning.coordinate(model.latitude, model.longitude))
-                for(var child = 0; child < model.rowCount(); child++){
-//                    console.log(coordenada.distanceTo(QtPositioning.coordinate(monumentos.get(child).center)));
-                    console.log(coordenada.distanceTo(QtPositioning.coordinate(model.get(child).latitude, model.get(child).longitude)));
-                    console.log(model.get(child).titulo);
-                    if (coordenada.distanceTo(QtPositioning.coordinate(model.get(child).latitude, model.get(child).longitude)) < 100){
-                        console.log('O raio entre o dispositivo está dentro do alcance, enable mouseArea...');
-
+                console.log("Coordenadass: " + coordenada.latitude, coordenada.longitude);
+                for( var i=0; i<mapufpa.mapItems.length; i++){
+                    console.log("Cordenada mercator: " + mapufpa.mapItems[i].center);
+                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > 100){
+                        console.log("Esta distante");
+                        mapufpa.mapItems[i].habilitar = true;
+                        mapufpa.mapItems[i].color = "red";
                     }
                 }
-                for(var i=0; i < delegateGroup.count(); i++){
-                    console.log(pontosTuristicos.center);
-                }
+//                for(var child = 0; child < model.rowCount(); child++){
+//                    console.log(coordenada.distanceTo(QtPositioning.coordinate(model.get(child).latitude, model.get(child).longitude)));
+//                    console.log(model.get(child).titulo);
+//                    if (coordenada.distanceTo(QtPositioning.coordinate(model.get(child).latitude, model.get(child).longitude)) > 100){
+//                        console.log('O raio entre o dispositivo está dentro do alcance, enable mouseArea...');
+//                    }
+//                }
+//                for( var i=0; i<mapufpa.mapItems.length; i++){
+//                    console.log(mapufpa.mapItems[i].color)
+//                    mapufpa.mapItems[i].color = "red"
+//                    console.log(mapufpa.mapItems[i].color)
+//                    console.log(mapufpa.mapItems[i].center)
+//                }
             }
         }
     }
