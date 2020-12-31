@@ -10,8 +10,17 @@
         <file>media/mirante.jpeg</file>
         <file>media/mirante.jpg</file>
         <file>media/mirante2.jpg</file>
-        <file>icen.html</file>
-        <file>capela.html</file>
-        <file>mirante.html</file>
+        <file>js/config.js</file>
+        <file>media/compass-regular.svg</file>
+        <file>media/logo-turismo.png</file>
+        <file>media/background.jpg</file>
+        <file>components/SplashScreenTurismo.qml</file>
+        <file>html5-detalhes/icen.html</file>
+        <file>html5-detalhes/capela.html</file>
+        <file>html5-detalhes/mirante.html</file>
+        <file>pages/Start.qml</file>
+        <file>pages/Roteiros.qml</file>
+        <file>pages/About.qml</file>
+        <file>pages/Configuration.qml</file>
     </qresource>
 </RCC>

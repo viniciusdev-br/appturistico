@@ -8,13 +8,17 @@ import QtQml 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls.Material 2.12
 import QtWebView 1.1
+//Importando as configurações do arquivo .js
+import "js/config.js" as CF
 ApplicationWindow {
-    Material.theme: Material.System
+    title: qsTr(CF.title)
     id: page
-    width: Qt.platform.os == "android" ? Screen.width : 720
-    height: Qt.platform.os == "android" ? Screen.height : 1280
+    width: CF.width
+    height: CF.heigth
+    minimumHeight: CF.heigth
+    minimumWidth: CF.width
+    Material.theme: Material.Light
     visible: true
-    title: qsTr("Aplicativo Geoturístico")
     property url site: ""
 
     Plugin{id: mapUniversidade; name: "osm"}
