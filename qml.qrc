@@ -3,7 +3,6 @@
         <file>main.qml</file>
         <file>media/icen.jpeg</file>
         <file>media/mirante-do-rio.mp4</file>
-        <file>Dados.json</file>
         <file>media/capela.jpeg</file>
         <file>media/capela2.jpg</file>
         <file>media/icen2.jpg</file>
@@ -18,9 +17,23 @@
         <file>html5-detalhes/icen.html</file>
         <file>html5-detalhes/capela.html</file>
         <file>html5-detalhes/mirante.html</file>
-        <file>pages/Start.qml</file>
-        <file>pages/Roteiros.qml</file>
+        <file>pages/StartCanvas.qml</file>
+        <file>pages/SelectRoteiro.qml</file>
         <file>pages/About.qml</file>
         <file>pages/Configuration.qml</file>
+        <file>pages/RoteiroMap.qml</file>
+        <file>pages/Home.qml</file>
+        <file>roteiros/Roteiro1.json</file>
+        <file>components/PageMap.qml</file>
+        <file>models/PageListModel.qml</file>
+        <file>media/home.svg</file>
+        <file>media/back.svg</file>
+        <file>media/about.svg</file>
+        <file>media/map-explore.svg</file>
+        <file>media/configuration.svg</file>
+        <file>components/PageGlobal.qml</file>
+        <file>components/ToolBarGlobal.qml</file>
+        <file>components/PanelGlobal.qml</file>
+        <file>components/BackgroundGlobal.qml</file>
     </qresource>
 </RCC>
