@@ -59,7 +59,7 @@ PageGlobal {
                     ListElement {text: "Capela"}
                 }
                 delegate: {
-
+                    
                 }
             }
         }
