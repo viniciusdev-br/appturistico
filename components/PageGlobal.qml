@@ -7,6 +7,6 @@ Item {
     property bool isPortrait: this.width < this.height
     property bool toolButtonMenu: true
     property string title: CF.title
-
     anchors.left: parent ? parent.left : undefined
+
 }

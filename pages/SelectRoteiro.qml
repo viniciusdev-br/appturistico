@@ -7,21 +7,18 @@ import '../components'
 PageGlobal {
     id: selectRoteiroId
     ListModel{id:modelDescricao}
+    ListModel{id:modelDetalhes}
+
     Component.onCompleted: {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", '../roteiros/Roteiro1.json');
+        xhr.open("GET", '../roteiros/listaroteiros.json');
         xhr.onreadystatechange = function() {
             if ( xhr.readyState === XMLHttpRequest.DONE ){
                 var data = JSON.parse(xhr.responseText);
                 modelDescricao.clear();
                 for (var i in data){
                     modelDescricao.append({
-                        latitude: data[i]['latitude'],
-                        longitude: data[i]['longitude'],
-                        titulo: data[i]['titulo'],
-                        descricao: data[i]['descricao'],
-                        bairro: data[i]['bairro'],
-                        detalhes: data[i]['detalhes']
+                        tag: data[i]['tag']
                     });
                 }
             }
@@ -51,15 +48,25 @@ PageGlobal {
                 width: parent.width * 0.8
                 currentIndex: 0
                 displayText: "Roteiro: " + currentText
-                model: ListModel {
-                    id: modelCombobox
-                    ListElement {text: "- - -"}
-                    ListElement {text: "ICEN"}
-                    ListElement {text: "Mirante"}
-                    ListElement {text: "Capela"}
-                }
-                delegate: {
-
+                textRole: "tag"
+                model: modelDescricao
+                onActivated: {
+                    console.log("Combobox selecionado " + currentText)
+                    var xhr = new XMLHttpRequest;
+                    xhr.open("GET", '../roteiros/listaroteiros.json');
+                    xhr.onreadystatechange = function() {
+                        if ( xhr.readyState === XMLHttpRequest.DONE ){
+                            var data = JSON.parse(xhr.responseText);
+                            modelDetalhes.clear();
+//                            for (var i in data){
+                                modelDetalhes.append({
+                                    bairro: data[currentIndex]['bairro'],
+                                    detalhes: data[currentIndex]['detalhes']
+                                });
+//                            }
+                        }
+                    }
+                    xhr.send()
                 }
             }
         }
@@ -68,22 +75,28 @@ PageGlobal {
             height: 300
             ListView{
                 anchors.fill: parent
-                model: modelDescricao
-                visible: selecbox.currentIndex != 0
+                model: modelDetalhes
                 delegate: Label{
-                    text: "Nome do roteiro " + titulo
+
+                    text: "Nome do roteiro " + bairro + "
+" + detalhes
                 }
             }
         }
         Row{
             width: parent.width
             height: 30
-            Button{
+            RoundButton{
                 anchors.horizontalCenter: parent.horizontalCenter
+                radius: 7
+                width: botaoStart.width + 20
+                height: botaoStart.height + 20
                 Text {
+                    id: botaoStart
                     anchors.centerIn: parent
                     color: "white"
                     text: "Começar"
+                    font.pointSize: 14
                 }
                 palette.button: CF.backgroundColor
              }

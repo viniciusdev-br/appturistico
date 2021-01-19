@@ -4,7 +4,7 @@
     "titulo": "ICEN",
     "descricao": "/home/vinicius/Documentos/GitHub/appturistico/html5-detalhes/icen.html",
     "bairro": "GuamáICEN",
-    "detahles": "Um lindo Instituto de Ciências Exatas e Naturais"
+    "detalhes": "Um lindo Instituto de Ciências Exatas e Naturais"
 },
 {
     "latitude": -1.4772138,
@@ -12,7 +12,7 @@
     "titulo": "Mirante",
     "descricao": "/home/vinicius/Documentos/GitHub/appturistico/html5-detalhes/mirante.html",
     "bairro": "GuamáMirante",
-    "detahles": "Um fabuloso Mirante para mirar nos hozirontes"
+    "detalhes": "Um fabuloso Mirante para mirar nos hozirontes"
 },
 {
     "latitude": -1.4773023,
@@ -20,5 +20,5 @@
     "titulo": "Capela",
     "descricao": "/home/vinicius/Documentos/GitHub/appturistico/html5-detalhes/capela.html",
     "bairro": "GuamáCapela",
-    "detahles": "Uma magnífica capela normalmente usada para coisas que não se faz na capela, infelizmente"
+    "detalhes": "Uma magnífica capela normalmente usada para coisas que não se faz na capela, infelizmente"
 }]
