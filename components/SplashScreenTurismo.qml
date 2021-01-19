@@ -27,7 +27,7 @@ BackgroundGlobal {
             id: label
             Layout.alignment: Qt.AlignHCenter
             color: 'white'
-            text: CF.trademark
+            text: CF.title
             Component.onCompleted: label.font.pointSize += 6
         }
     }

@@ -5,28 +5,26 @@
 #include <QQmlComponent>
 #include <QtQml>
 #include <QQuickStyle>
-#include <QtWebView>
+#include <QQmlApplicationEngine>
+//#include <QtWebView>
 int main(int argc, char *argv[])
 {
-//    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
-//    QGuiApplication app(argc, argv);
-
-//    QQmlApplicationEngine engine;
-//    const QUrl url(QStringLiteral("qrc:/main.qml"));
-//    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
-//                     &app, [url](QObject *obj, const QUrl &objUrl) {
-//        if (!obj && url == objUrl)
-//            QCoreApplication::exit(-1);
-//    }, Qt::QueuedConnection);
-//    engine.load(url);
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
-    QtWebView::initialize();
-    QQuickStyle::setStyle("Material");
-    QQuickView view;
+    app.setOrganizationName("CCSL UFPA");
+    app.setOrganizationDomain("ccsl.ufpa.br");
+    app.setApplicationName("appturistico");
+    app.setApplicationVersion("0.5");
 
-    view.setSource(QUrl("qrc:/main.qml"));
-    view.setMinimumSize(QSize(1280,720));
+    QQmlApplicationEngine engine;
+
+    const QUrl url(QStringLiteral("qrc:/main.qml"));
+
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated, &app, [url](QObject *obj, const QUrl &objUrl) {
+            if (!obj && url == objUrl)
+                QCoreApplication::exit(-1);
+        }, Qt::QueuedConnection);
+        engine.load(url);
 
     return app.exec();
 }

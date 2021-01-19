@@ -1,6 +1,6 @@
 QT += quick
 QT += quickcontrols2
-QT += webview
+#QT += webview
 QT += qml
 OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
@@ -12,7 +12,8 @@ CONFIG += c++11
 SOURCES += \
         main.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc \
+    qml.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =

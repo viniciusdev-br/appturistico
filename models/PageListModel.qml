@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.12
 
 ListModel {
     id: modePageList
@@ -31,11 +31,11 @@ ListModel {
         source: 'qrc:/pages/SelectRoteiro.qml'
         sourceIcon: 'qrc:/media/map-explore.svg'
     }
-    ListElement{
-        nameId: 'roteiroMap'
-        active: true
-        title: qsTr('Roteiro')
-        source: 'qrc:/pages/RoteiroMap.qml'
-        sourceIcon: 'qrc:/media/map-explore.svg'
-    }
+//    ListElement{
+//        nameId: 'roteiroMap'
+//        active: true
+//        title: qsTr('Roteiro')
+//        source: 'qrc:/pages/RoteiroMap.qml'
+//        sourceIcon: 'qrc:/media/map-explore.svg'
+//    }
 }

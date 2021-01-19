@@ -21,11 +21,12 @@ Page{
         toolButtonMenu: root.currentItem ? root.currentItem.toolButtonMenu : true
     }
 
+
     StackView{
         id: stackViewPages
         anchors.fill: parent
         initialItem: Home {
-            title: qsTr("Start")
+            title: qsTr("Home")
         }
         onCurrentItemChanged: {
             root.currentItem = currentItem

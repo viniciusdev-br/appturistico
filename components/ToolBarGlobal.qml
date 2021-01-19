@@ -19,9 +19,9 @@ ToolBar {
         anchors.margins: 5
         ToolButton {
             property bool toolButtonMenu
-            property string iconName: toolButtonMenu ? 'menu' : 'back'
+            property string iconName: toolButtonMenu ? 'home' : 'back'
             id: buttonLeft
-            icon.source: 'qrc:/media/icons/' + iconName + '.svg'
+            icon.source: 'qrc:/media/' + iconName + '.svg'
             icon.color: 'white'
             height: parent.height
 
