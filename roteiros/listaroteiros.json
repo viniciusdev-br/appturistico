@@ -1,15 +1,18 @@
 [{
     "tag": "UFPA",
     "bairro": "Guamá",
-    "detalhes": "Universidade Federal do Pará"
+    "detalhes": "Universidade Federal do Pará",
+    "imagemApoio": "qrc:/media/ufpa.jpg"
 },
 {
     "tag": "Ver-o-Peso",
     "bairro": "Campina",
-    "detalhes": "Maior feira a céu aberto do Brasil"
+    "detalhes": "Maior feira a céu aberto do Brasil",
+    "imagemApoio": "qrc:/media/ver-o-peso.jpg"
 },
 {
     "tag": "Cidade-Velha",
     "bairro": "Cidade Velha",
-    "detalhes": "Uma antiga cidade que é velha"
+    "detalhes": "Uma antiga cidade que é velha",
+    "imagemApoio": "qrc:/media/cidade-velha.jpg"
 }]

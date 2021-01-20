@@ -5,7 +5,6 @@ import QtQuick.Layouts 1.12
 import "../js/config.js" as CF
 import '../components'
 PageGlobal {
-    id: selectRoteiroId
     ListModel{id:modelDescricao}
     ListModel{id:modelDetalhes}
 
@@ -61,7 +60,8 @@ PageGlobal {
 //                            for (var i in data){
                                 modelDetalhes.append({
                                     bairro: data[currentIndex]['bairro'],
-                                    detalhes: data[currentIndex]['detalhes']
+                                    detalhes: data[currentIndex]['detalhes'],
+                                    imagemApoio: data[currentIndex]['imagemApoio']
                                 });
 //                            }
                         }
@@ -71,15 +71,26 @@ PageGlobal {
             }
         }
         Row{
+            id: rowImagem
             width: parent.width
-            height: 300
+            height: parent.height * 0.6
             ListView{
                 anchors.fill: parent
                 model: modelDetalhes
                 delegate: Label{
-
-                    text: "Nome do roteiro " + bairro + "
-" + detalhes
+                    Column{
+                        Image {
+                            width: rowImagem.width
+                            height: rowImagem.height * 0.6
+                            fillMode: Image.PreserveAspectFit
+                            source: imagemApoio
+                        }
+                        Text {
+                            width: rowImagem.width
+                            wrapMode: Text.WordWrap
+                            text: qsTr("Nome do gngddddddddddddddddddddddddddddddddddddddddthhhhhhhhhhhhroteiro " + bairro +" "+ detalhes)
+                        }
+                    }
                 }
             }
         }
