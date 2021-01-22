@@ -41,5 +41,6 @@
         <file>media/cidade-velha.jpg</file>
         <file>media/ufpa.jpg</file>
         <file>media/ver-o-peso.jpg</file>
+        <file>font/YuseiMagic-Regular.ttf</file>
     </qresource>
 </RCC>

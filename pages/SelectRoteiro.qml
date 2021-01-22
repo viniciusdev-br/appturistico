@@ -74,21 +74,35 @@ PageGlobal {
             id: rowImagem
             width: parent.width
             height: parent.height * 0.6
+            anchors.horizontalCenter: parent.horizontalCenter
             ListView{
                 anchors.fill: parent
                 model: modelDetalhes
                 delegate: Label{
                     Column{
-                        Image {
+                        anchors.centerIn: horizontalCenter
+                        width: imagemRoteiro.width
+                        Text {
+                            opacity: 0.7
+                            horizontalAlignment: Text.AlignHCenter
                             width: rowImagem.width
+                            wrapMode: Text.WordWrap
+                            font.pointSize: 14
+                            font.bold: true
+                            text: qsTr(bairro)
+                        }
+                        Image {
+                            anchors.horizontalCenter: rowImagem.horizontalCenter
+                            id: imagemRoteiro
                             height: rowImagem.height * 0.6
                             fillMode: Image.PreserveAspectFit
                             source: imagemApoio
                         }
                         Text {
-                            width: rowImagem.width
+                            horizontalAlignment: Text.AlignHCenter
+                            width: imagemRoteiro.width
                             wrapMode: Text.WordWrap
-                            text: qsTr("Nome do gngddddddddddddddddddddddddddddddddddddddddthhhhhhhhhhhhroteiro " + bairro +" "+ detalhes)
+                            text: qsTr(detalhes)
                         }
                     }
                 }

@@ -1,18 +1,18 @@
 [{
     "tag": "UFPA",
     "bairro": "Guamá",
-    "detalhes": "Universidade Federal do Pará",
+    "detalhes": "A Universidade Federal do Pará Lorem ipsum vitae nam habitant nullam turpis elit pellentesque, turpis vulputate luctus sociosqu neque rhoncus viverra sapien vulputate, massa morbi justo elit eleifend massa mi. nisi donec cursus varius diam fermentum in venenatis egestas lobortis aliquam, purus ullamcorper integer erat arcu mattis arcu tristique ullamcorper, ipsum varius amet malesuada quisque augue litora vehicula erat. integer nec aliquam scelerisque curae nunc quisque aenean leo adipiscing torquent aliquam, donec suscipit erat adipiscing vulputate netus donec ad urna pharetra, mollis at quis morbi nam torquent non hendrerit ad nulla. tellus praesent sem convallis fames curabitur ante id conubia, facilisis habitant etiam in hac venenatis vivamus ornare, donec litora morbi etiam velit iaculis mauris. ",
     "imagemApoio": "qrc:/media/ufpa.jpg"
 },
 {
     "tag": "Ver-o-Peso",
     "bairro": "Campina",
-    "detalhes": "Maior feira a céu aberto do Brasil",
+    "detalhes": "Maior feira a céu aberto do Brasil Lorem ipsum vitae nam habitant nullam turpis elit pellentesque, turpis vulputate luctus sociosqu neque rhoncus viverra sapien vulputate, massa morbi justo elit eleifend massa mi. nisi donec cursus varius diam fermentum in venenatis egestas lobortis aliquam, purus ullamcorper integer erat arcu mattis arcu tristique ullamcorper, ipsum varius amet malesuada quisque augue litora vehicula erat. integer nec aliquam scelerisque curae nunc quisque aenean leo adipiscing torquent aliquam, donec suscipit erat adipiscing vulputate netus donec ad urna pharetra, mollis at quis morbi nam torquent non hendrerit ad nulla. tellus praesent sem convallis fames curabitur ante id conubia, facilisis habitant etiam in hac venenatis vivamus ornare, donec litora morbi etiam velit iaculis mauris. ",
     "imagemApoio": "qrc:/media/ver-o-peso.jpg"
 },
 {
-    "tag": "Cidade-Velha",
+    "tag": "Cidade Velha",
     "bairro": "Cidade Velha",
-    "detalhes": "Uma antiga cidade que é velha",
+    "detalhes": "Uma antiga cidade que é velha Lorem ipsum vitae nam habitant nullam turpis elit pellentesque, turpis vulputate luctus sociosqu neque rhoncus viverra sapien vulputate, massa morbi justo elit eleifend massa mi. nisi donec cursus varius diam fermentum in venenatis egestas lobortis aliquam, purus ullamcorper integer erat arcu mattis arcu tristique ullamcorper, ipsum varius amet malesuada quisque augue litora vehicula erat. integer nec aliquam scelerisque curae nunc quisque aenean leo adipiscing torquent aliquam, donec suscipit erat adipiscing vulputate netus donec ad urna pharetra, mollis at quis morbi nam torquent non hendrerit ad nulla. tellus praesent sem convallis fames curabitur ante id conubia, facilisis habitant etiam in hac venenatis vivamus ornare, donec litora morbi etiam velit iaculis mauris. ",
     "imagemApoio": "qrc:/media/cidade-velha.jpg"
 }]
