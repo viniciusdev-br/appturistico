@@ -31,10 +31,10 @@ PageGlobal {
             width: parent.width
             height: 30
             Label{
-                topPadding: 15
+                topPadding: 10
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: "Selecione um roteiro "
-                font.pointSize: 16
+                font.pointSize: 20
                 font.bold: true
             }
         }
@@ -71,37 +71,43 @@ PageGlobal {
             }
         }
         Row{
-            id: rowImagem
-            width: parent.width
-            height: parent.height * 0.6
-            anchors.horizontalCenter: parent.horizontalCenter
+            id: rowConteudo
+            width: parent.width; height: parent.height * 0.6
             ListView{
-                anchors.fill: parent
+                width: rowConteudo.width
+                height: 300
                 model: modelDetalhes
                 delegate: Label{
                     Column{
-                        anchors.centerIn: horizontalCenter
-                        width: imagemRoteiro.width
-                        Text {
-                            opacity: 0.7
-                            horizontalAlignment: Text.AlignHCenter
-                            width: rowImagem.width
-                            wrapMode: Text.WordWrap
-                            font.pointSize: 14
-                            font.bold: true
-                            text: qsTr(bairro)
+                        id: colunaConteudo
+                        anchors.fill: rowConteudo
+                        spacing: 5
+                        Rectangle {
+                            anchors.horizontalCenter: colunaConteudo.horizontalCenter
+                            color: "#6ed36e";
+                            radius: 10
+                            width: textBairro.width + 20; height: 50
+                            Text {
+                                id: textBairro
+                                anchors.centerIn: parent
+                                color: "white"
+                                font.pointSize: 18;
+                                text: "Bairro " + bairro
+                            }
                         }
                         Image {
-                            anchors.horizontalCenter: rowImagem.horizontalCenter
+                            anchors.horizontalCenter: colunaConteudo.horizontalCenter
                             id: imagemRoteiro
-                            height: rowImagem.height * 0.6
+                            height: rowConteudo.height * 0.6
                             fillMode: Image.PreserveAspectFit
                             source: imagemApoio
                         }
                         Text {
+                            anchors.horizontalCenter: colunaConteudo.horizontalCenter
                             horizontalAlignment: Text.AlignHCenter
-                            width: imagemRoteiro.width
+                            width: rowConteudo.width
                             wrapMode: Text.WordWrap
+                            font.pointSize: 14
                             text: qsTr(detalhes)
                         }
                     }
@@ -120,7 +126,7 @@ PageGlobal {
                     id: botaoStart
                     anchors.centerIn: parent
                     color: "white"
-                    text: "Começar"
+                    text: "Iniciar roteiro"
                     font.pointSize: 14
                 }
                 palette.button: CF.backgroundColor
