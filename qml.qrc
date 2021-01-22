@@ -23,7 +23,7 @@
         <file>pages/Configuration.qml</file>
         <file>pages/RoteiroMap.qml</file>
         <file>pages/Home.qml</file>
-        <file>roteiros/UFPA.json</file>
+        <file>roteiros/ufpa.json</file>
         <file>components/PageMap.qml</file>
         <file>models/PageListModel.qml</file>
         <file>media/home.svg</file>
@@ -36,8 +36,8 @@
         <file>components/PanelGlobal.qml</file>
         <file>components/BackgroundGlobal.qml</file>
         <file>roteiros/listaroteiros.json</file>
-        <file>roteiros/Ver-o-Peso.json</file>
-        <file>roteiros/Cidade-Velha.json</file>
+        <file>roteiros/ver-o-peso.json</file>
+        <file>roteiros/cidade-velha.json</file>
         <file>media/cidade-velha.jpg</file>
         <file>media/ufpa.jpg</file>
         <file>media/ver-o-peso.jpg</file>

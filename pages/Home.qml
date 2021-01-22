@@ -4,11 +4,10 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts 1.12
 
 import '../components'
-import '../pages'
 
 PageGlobal {
     ColumnLayout {
-        width: parent.width/4
+        width: parent.width/3.5
         anchors.centerIn: parent
         Button {
             Layout.fillWidth: true

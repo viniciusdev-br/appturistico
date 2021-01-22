@@ -59,6 +59,7 @@ PageGlobal {
                             modelDetalhes.clear();
 //                            for (var i in data){
                                 modelDetalhes.append({
+                                    roteiro: data[currentIndex]['roteiro'],
                                     bairro: data[currentIndex]['bairro'],
                                     detalhes: data[currentIndex]['detalhes'],
                                     imagemApoio: data[currentIndex]['imagemApoio']
@@ -81,7 +82,7 @@ PageGlobal {
                     Column{
                         id: colunaConteudo
                         anchors.fill: rowConteudo
-                        spacing: 5
+                        spacing: 10
                         Rectangle {
                             anchors.horizontalCenter: colunaConteudo.horizontalCenter
                             color: "#6ed36e";
@@ -110,28 +111,28 @@ PageGlobal {
                             font.pointSize: 14
                             text: qsTr(detalhes)
                         }
+                        RoundButton{
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            radius: 5
+                            width: botaoStart.width + 20
+                            height: botaoStart.height + 20
+                            palette.button: CF.backgroundColor
+                            Text {
+                                id: botaoStart
+                                anchors.centerIn: parent
+                                color: "white"
+                                text: "Iniciar roteiro!"
+                                font.pointSize: 14
+                            }
+                            onClicked: {
+                                targetRoteiro = roteiro
+                                stackViewPages.push("qrc:/pages/RoteiroMap.qml")
+                                root.currentItem.title = "Pontos Turísticos"
+                            }
+                         }
                     }
                 }
             }
         }
-        Row{
-            width: parent.width
-            height: 30
-            RoundButton{
-                anchors.horizontalCenter: parent.horizontalCenter
-                radius: 7
-                width: botaoStart.width + 20
-                height: botaoStart.height + 20
-                Text {
-                    id: botaoStart
-                    anchors.centerIn: parent
-                    color: "white"
-                    text: "Iniciar roteiro"
-                    font.pointSize: 14
-                }
-                palette.button: CF.backgroundColor
-             }
-        }
-
     }
 }
