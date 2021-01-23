@@ -11,21 +11,20 @@ import QtWebView 1.15
 //Importando as configurações do arquivo .js
 import "../js/config.js" as CF
 import '../components'
-
 PageGlobal {
-    title: qsTr("Tour pelo mapa")
+    title: qsTr("Seu Tour")
     Material.theme: Material.Light
     visible: true
     property url site: ""
-
     Plugin{id: mapUniversidade; name: "osm"}
 
     ListModel{ id: model }
     ListModel{ id: positionMapCircle}
 
     Component.onCompleted: {
+        console.log(targetRoteiro)
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", '../roteiros/'+targetRoteiro+'.json');
+        xhr.open("GET", "../roteiros/ufpa.json");
         xhr.onreadystatechange = function() {
             if ( xhr.readyState === XMLHttpRequest.DONE ){
                 var data = JSON.parse(xhr.responseText);
@@ -104,7 +103,7 @@ PageGlobal {
 
     Popup{
         id: popup
-        width: page.width*0.70; height: page.height*0.60
+        width: mapufpa.width*0.70; height: mapufpa.height*0.60
         modal: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         padding: 0

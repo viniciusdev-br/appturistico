@@ -12,3 +12,6 @@ var backgroundColor = '#009688'
 
 var titlePageColor = '#FFF'
 
+// Roteiro a ser escolhido
+var targetRoteiroJS = ''
+

@@ -4,10 +4,12 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts 1.12
 import "../js/config.js" as CF
 import '../components'
+import '.'
 PageGlobal {
+    id: paginaGlobal
     ListModel{id:modelDescricao}
     ListModel{id:modelDetalhes}
-
+    property string targetRoteiro: ""
     Component.onCompleted: {
         var xhr = new XMLHttpRequest;
         xhr.open("GET", '../roteiros/listaroteiros.json');
@@ -33,7 +35,7 @@ PageGlobal {
             Label{
                 topPadding: 10
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Selecione um roteiro "
+                text: "Selecione um roteiro"
                 font.pointSize: 20
                 font.bold: true
             }
@@ -125,9 +127,8 @@ PageGlobal {
                                 font.pointSize: 14
                             }
                             onClicked: {
-                                targetRoteiro = roteiro
-                                stackViewPages.push("qrc:/pages/RoteiroMap.qml")
                                 root.currentItem.title = "Pontos Turísticos"
+                                stackViewPages.push("qrc:/pages/RoteiroMap.qml")
                             }
                          }
                     }
@@ -135,4 +136,5 @@ PageGlobal {
             }
         }
     }
+
 }

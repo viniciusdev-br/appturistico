@@ -28,7 +28,7 @@ ApplicationWindow {
 
     Component.onCompleted: {
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", 'roteiros/Roteiro1.json');
+        xhr.open("GET", '../roteiros/ufpa.json');
         xhr.onreadystatechange = function() {
             if ( xhr.readyState === XMLHttpRequest.DONE ){
                 var data = JSON.parse(xhr.responseText);
