@@ -128,7 +128,7 @@ PageGlobal {
                             }
                             onClicked: {
                                 root.currentItem.title = "Pontos Turísticos"
-                                stackViewPages.push("qrc:/pages/RoteiroMap.qml")
+                                stackViewPages.push("qrc:/pages/RoteiroMap.qml", {"targetRoteiroLast": roteiro})
                             }
                          }
                     }

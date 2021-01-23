@@ -12,7 +12,8 @@ import QtWebView 1.15
 import "../js/config.js" as CF
 import '../components'
 PageGlobal {
-    title: qsTr("Seu Tour")
+    property string targetRoteiroLast: ""
+    title: qsTr("Tour pelo mapa")
     Material.theme: Material.Light
     visible: true
     property url site: ""
@@ -24,7 +25,7 @@ PageGlobal {
     Component.onCompleted: {
         console.log(targetRoteiro)
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", "../roteiros/ufpa.json");
+        xhr.open("GET", "../roteiros/"+targetRoteiroLast+".json");
         xhr.onreadystatechange = function() {
             if ( xhr.readyState === XMLHttpRequest.DONE ){
                 var data = JSON.parse(xhr.responseText);
