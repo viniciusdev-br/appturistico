@@ -13,10 +13,12 @@ import "../js/config.js" as CF
 import '../components'
 PageGlobal {
     property string targetRoteiroLast: ""
+    property url site: ""
+    property double latitudeMaker
+    property double lonigitudeMaker
     title: qsTr("Tour pelo mapa")
     Material.theme: Material.Light
     visible: true
-    property url site: ""
     Plugin{id: mapUniversidade; name: "osm"}
 
     ListModel{ id: model }
@@ -47,7 +49,7 @@ PageGlobal {
         id: mapufpa
         anchors.fill: parent
         plugin: mapUniversidade
-        center: QtPositioning.coordinate(-1.475107, -48.456111)
+        center: QtPositioning.coordinate(latitudeMaker, lonigitudeMaker)
         zoomLevel: 16
         Instantiator {
             //Cria os mapCircles a partir do model
@@ -88,17 +90,29 @@ PageGlobal {
             onPositionChanged: {
                 posicaoDispositivo.start()
                 var coordenada = posicaoDispositivo.position.coordinate;
+                latitudeMaker = coordenada.latitude
+                lonigitudeMaker = coordenada.longitude
                 console.log("Coordenadass: " + coordenada.latitude, coordenada.longitude);
                 for( var i=0; i<mapufpa.mapItems.length; i++){
                     console.log("Cordenada mercator: " + mapufpa.mapItems[i].center);
-                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > 100){
+                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) < 100){
                         console.log("Esta distante");
                         mapufpa.mapItems[i].habilitar = true;
-                        mapufpa.mapItems[i].color = "red";
+                        mapufpa.mapItems[i].color = "#009688";
                     }
                 }
-
             }
+        }
+        MapQuickItem{
+            id: maker
+            sourceItem: Image {
+                width: 20; height: 25
+                id: makerIcon
+                source: "qrc:/media/maker-user.svg"
+            }
+            coordinate: QtPositioning.coordinate(latitudeMaker, lonigitudeMaker)
+            opacity: 0.7
+            anchorPoint: Qt.point(makerIcon.width, makerIcon.height)
         }
     }
 

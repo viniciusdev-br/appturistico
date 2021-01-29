@@ -42,5 +42,6 @@
         <file>media/ufpa.jpg</file>
         <file>media/ver-o-peso.jpg</file>
         <file>font/YuseiMagic-Regular.ttf</file>
+        <file>media/maker-user.svg</file>
     </qresource>
 </RCC>
