@@ -95,7 +95,7 @@ PageGlobal {
                 console.log("Coordenadass: " + coordenada.latitude, coordenada.longitude);
                 for( var i=0; i<mapufpa.mapItems.length; i++){
                     console.log("Cordenada mercator: " + mapufpa.mapItems[i].center);
-                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) < 100){
+                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > 100){
                         console.log("Esta distante");
                         mapufpa.mapItems[i].habilitar = true;
                         mapufpa.mapItems[i].color = "#009688";
@@ -108,7 +108,7 @@ PageGlobal {
             sourceItem: Image {
                 width: 20; height: 25
                 id: makerIcon
-                source: "qrc:/media/maker-user.svg"
+                source: "qrc:/media/icons/maker-user.svg"
             }
             coordinate: QtPositioning.coordinate(latitudeMaker, lonigitudeMaker)
             opacity: 0.7

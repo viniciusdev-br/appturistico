@@ -6,8 +6,8 @@ var width = 480
 var heigth = 640
 
 //Logo and images
-var logoImage = 'qrc:/media/compass-regular.svg'
-var backgroundImage = 'qrc:/media/background.jpg'
+var logoImage = 'qrc:/media/icons/compass-regular.svg'
+var backgroundImage = 'qrc:/media/images/background.jpg'
 var backgroundColor = '#009688'
 
 var titlePageColor = '#FFF'

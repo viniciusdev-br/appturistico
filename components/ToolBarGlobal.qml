@@ -21,7 +21,7 @@ ToolBar {
             property bool toolButtonMenu
             property string iconName: toolButtonMenu ? 'home' : 'back'
             id: buttonLeft
-            icon.source: 'qrc:/media/' + iconName + '.svg'
+            icon.source: 'qrc:/media/icons/' + iconName + '.svg'
             icon.color: 'white'
             height: parent.height
 

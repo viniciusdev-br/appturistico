@@ -11,7 +11,7 @@ PageGlobal {
         anchors.centerIn: parent
         Button {
             Layout.fillWidth: true
-            icon.source: "../media/compass-regular.svg"
+            icon.source: "../media/icons/compass-regular.svg"
             text: "Roteiros"
             onClicked: {
                 stackViewPages.push("qrc:/pages/SelectRoteiro.qml")
@@ -20,7 +20,7 @@ PageGlobal {
         }
         Button {
             Layout.fillWidth: true
-            icon.source: "../media/configuration.svg"
+            icon.source: "../media/icons/configuration.svg"
             text: "Configurações"
             onClicked: {
                 stackViewPages.push("qrc:/pages/Configuration.qml")
@@ -28,7 +28,7 @@ PageGlobal {
         }
         Button{
             Layout.fillWidth: true
-            icon.source: "../media/about.svg"
+            icon.source: "../media/icons/about.svg"
             text: "Sobre"
             onClicked: {
                 stackViewPages.push("qrc:/pages/About.qml")

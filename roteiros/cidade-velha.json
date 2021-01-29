@@ -10,7 +10,7 @@
     "latitude": -1.4772138,
     "longitude": -48.4564629,
     "titulo": "Mirante",
-    "descricao": "/home/vinicius/Documentos/GitHub/appturistico/html5-detalhes/mirante.html",
+    "descricao": "qrc:/html5-detalhes/mirante.html",
     "bairro": "GuamáMirante",
     "detalhes": "Um fabuloso Mirante para mirar nos hozirontes"
 },
@@ -18,7 +18,7 @@
     "latitude": -1.4773023,
     "longitude": -48.4554115,
     "titulo": "Capela",
-    "descricao": "/home/vinicius/Documentos/GitHub/appturistico/html5-detalhes/capela.html",
+    "descricao": "qrc:/html5-detalhes/capela.html",
     "bairro": "GuamáCapela",
     "detalhes": "Uma magnífica capela normalmente usada para coisas que não se faz na capela, infelizmente"
 }]
