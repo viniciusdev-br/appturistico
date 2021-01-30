@@ -15,7 +15,7 @@ PageGlobal {
             text: "Roteiros"
             onClicked: {
                 stackViewPages.push("qrc:/pages/SelectRoteiro.qml")
-                root.currentItem.title = "Roteiros"
+                root.currentItem.title = "Roteiros ativos"
             }
         }
         Button {

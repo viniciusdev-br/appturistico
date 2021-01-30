@@ -37,6 +37,7 @@ ToolBar {
             }
         }
         Label {
+            font.pointSize: 14
             id: labelName
             color: CF.titlePageColor
             horizontalAlignment: Qt.AlignHCenter
