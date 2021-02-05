@@ -1,24 +1,24 @@
 [{
-    "latitude": -1.475107,
-    "longitude": -48.456111,
-    "titulo": "ICEN",
-    "descricao": "qrc:/html5-detalhes/icen.html",
-    "bairro": "GuamáICEN",
-    "detalhes": "Um lindo Instituto de Ciências Exatas e Naturais"
+    "latitude": -1.4519086,
+    "longitude": -48.5032379,
+    "titulo": "Solar da Beira",
+    "descricao": "qrc:/html5-detalhes/solar-da-beira.html",
+    "bairro": "Campina",
+    "detalhes": "Solar da beira"
 },
 {
-    "latitude": -1.4772138,
-    "longitude": -48.4564629,
-    "titulo": "Mirante",
-    "descricao": "qrc:/html5-detalhes/mirante.html",
-    "bairro": "GuamáMirante",
+    "latitude": -1.4537743,
+    "longitude": -48.5038372,
+    "titulo": "Praça do Relógio",
+    "descricao": "qrc:/html5-detalhes/praca-do-relogio.html",
+    "bairro": "Campina",
     "detalhes": "Um fabuloso Mirante para mirar nos hozirontes"
 },
 {
-    "latitude": -1.4773023,
-    "longitude": -48.4554115,
-    "titulo": "Capela",
-    "descricao": "qrc:/html5-detalhes/capela.html",
-    "bairro": "GuamáCapela",
-    "detalhes": "Uma magnífica capela normalmente usada para coisas que não se faz na capela, infelizmente"
+    "latitude": -1.44996,
+    "longitude": -48.5016128,
+    "titulo": "Estação das Docas",
+    "descricao": "qrc:/html5-detalhes/estacao-das-docas.html",
+    "bairro": "Campina",
+    "detalhes": "Solar da beira"
 }]

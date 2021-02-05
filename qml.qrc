@@ -42,5 +42,11 @@
         <file>roteiros/media/mirante2.jpg</file>
         <file>roteiros/media/ufpa.jpg</file>
         <file>roteiros/media/ver-o-peso.jpg</file>
+        <file>html5-detalhes/estacao-das-docas.html</file>
+        <file>roteiros/media/estacao-das-docas.jpg</file>
+        <file>roteiros/media/solar-da-beira.jpg</file>
+        <file>html5-detalhes/solar-da-beira.html</file>
+        <file>html5-detalhes/praca-do-relogio.html</file>
+        <file>roteiros/media/praca-do-relogio.jpg</file>
     </qresource>
 </RCC>
