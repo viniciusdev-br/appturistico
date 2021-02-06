@@ -48,5 +48,6 @@
         <file>html5-detalhes/solar-da-beira.html</file>
         <file>html5-detalhes/praca-do-relogio.html</file>
         <file>roteiros/media/praca-do-relogio.jpg</file>
+        <file>media/icons/map-marker.svg</file>
     </qresource>
 </RCC>

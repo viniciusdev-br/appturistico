@@ -106,7 +106,7 @@ PageGlobal {
         MapQuickItem{
             id: maker
             sourceItem: Image {
-                width: 20; height: 25
+                width: 15; height: 25
                 id: makerIcon
                 source: "qrc:/media/icons/maker-user.svg"
             }
@@ -114,6 +114,18 @@ PageGlobal {
             opacity: 0.7
             anchorPoint: Qt.point(makerIcon.width, makerIcon.height)
         }
+    }
+
+    RoundButton{
+        id: checkList
+        icon {
+            source: "qrc:/media/icons/map-marker.svg"
+        }
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        anchors.margins: 5
+        radius: 5
+        text: "0/20"
     }
 
     Popup{
