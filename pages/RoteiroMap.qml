@@ -16,7 +16,11 @@ PageGlobal {
     property url site: ""
     property double latitudeMaker
     property double lonigitudeMaker
-    title: qsTr("Tour pelo mapa")
+    property int visitado: 0
+    property bool primeiroFeito: false
+    property double initialLatitude
+    property double initialLongitude
+    title: qsTr('Roteiro')
     Material.theme: Material.Light
     visible: true
     Plugin{id: mapUniversidade; name: "osm"}
@@ -39,6 +43,11 @@ PageGlobal {
                         titulo: data[i]['titulo'],
                         descricao: data[i]['descricao']
                     });
+                    if ( primeiroFeito == false ){
+                        initialLatitude = data[i]['latitude'];
+                        initialLongitude = data[i]['longitude'];
+                        primeiroFeito = true;
+                    }
                 }
             }
         }
@@ -49,7 +58,7 @@ PageGlobal {
         id: mapufpa
         anchors.fill: parent
         plugin: mapUniversidade
-        center: QtPositioning.coordinate(latitudeMaker, lonigitudeMaker)
+        center: QtPositioning.coordinate(initialLatitude, initialLongitude)
         zoomLevel: 16
         Instantiator {
             //Cria os mapCircles a partir do model
@@ -125,20 +134,42 @@ PageGlobal {
         anchors.right: parent.right
         anchors.margins: 5
         radius: 5
-        text: "0/20"
+        text: visitado + "/20"
     }
 
     Popup{
         id: popup
-        width: mapufpa.width*0.70; height: mapufpa.height*0.60
+        width: mapufpa.width*0.70; height: mapufpa.height*0.75
         modal: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         padding: 0
         anchors.centerIn: parent
-        WebView{
+        Column{
             anchors.fill: parent
-            id:pagweb
-            url: site
+            spacing: 5
+            WebView{
+                width: parent.width
+                height: parent.height*0.85
+                id:pagweb
+                url: site
+            }
+            RoundButton{
+                anchors.horizontalCenter: parent.horizontalCenter
+                radius: 5
+                width: botaoVisitado.width + 20
+                height: botaoVisitado.height + 20
+                palette.button: CF.backgroundColor
+                Text {
+                    id: botaoVisitado
+                    anchors.centerIn: parent
+                    color: "white"
+                    text: "Visitado"
+                    font.pointSize: 14
+                }
+                onClicked: {
+                    visitado = visitado + 1
+                }
+            }
         }
     }
 }
