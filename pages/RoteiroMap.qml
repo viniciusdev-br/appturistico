@@ -1,4 +1,4 @@
-import QtQuick 2.15
+﻿import QtQuick 2.15
 import QtLocation 5.15
 import QtPositioning 5.15
 import QtQuick.Window 2.15
@@ -26,7 +26,7 @@ PageGlobal {
     Material.theme: Material.Light
     visible: true
     Plugin{id: mapUniversidade; name: "osm"}
-
+    sairRoteiro: true
     ListModel{ id: model }
     ListModel{ id: positionMapCircle}
 
@@ -182,14 +182,14 @@ PageGlobal {
             }
         }
     }
-    MessageDialog {
-        id: confirmExit
-        title: "Roteiro"
-        text: "Confirmar saida."
-        informativeText: "Você quer sair do Roteiro?"
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
-        Component.onCompleted: visible = true
-    }
+//    MessageDialog {
+//        id: confirmExit
+//        title: "Roteiro"
+//        text: "Confirmar saida."
+//        informativeText: "Você quer sair do Roteiro?"
+//        standardButtons: StandardButton.Ok | StandardButton.Cancel
+//        Component.onCompleted: visible = true
+//    }
 }
 
 

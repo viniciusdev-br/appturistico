@@ -13,7 +13,6 @@
         <file>pages/RoteiroMap.qml</file>
         <file>pages/Home.qml</file>
         <file>roteiros/ufpa.json</file>
-        <file>components/PageMap.qml</file>
         <file>models/PageListModel.qml</file>
         <file>components/PageGlobal.qml</file>
         <file>components/ToolBarGlobal.qml</file>

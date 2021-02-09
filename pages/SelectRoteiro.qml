@@ -46,11 +46,12 @@ PageGlobal {
             width: parent.width
             height: 30
             ComboBox{
+                property bool padraoComboBox: true
                 id: selectBox
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: parent.width * 0.8
                 currentIndex: 0
-                displayText: "Roteiro: " + currentText
+                displayText: padraoComboBox ?  "Selecione: " : currentText
                 textRole: "tag"
                 model: modelDescricao
                 layer.enabled: true
@@ -74,6 +75,7 @@ PageGlobal {
                         }
                     }
                     xhr.send()
+                    padraoComboBox = false;
                 }
             }
             Rectangle {

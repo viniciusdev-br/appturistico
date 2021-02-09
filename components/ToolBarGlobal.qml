@@ -1,24 +1,35 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
-
+import QtQuick.Dialogs 1.2
 import '../js/config.js' as CF
-
+import '../pages'
 ToolBar {
     property alias title: labelName.text
     property alias toolButtonMenu: buttonLeft.toolButtonMenu
-
+    property alias sairRoteiro: buttonLeft.sairRoteiro
     id:toolBarApp
     height: 60
     background: Rectangle{
         id: toolBarBackground
         color: CF.backgroundColor
     }
-
+    MessageDialog {
+        id: confirmExit
+        title: "Roteiro"
+        text: "Confirmar saida."
+        informativeText: "Você quer sair do Roteiro?"
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        onAccepted: {
+            stackViewPages.pop()
+            sairRoteiro = false
+        }
+    }
     contentItem: Row{
         anchors.fill: parent
         anchors.margins: 5
         ToolButton {
             property bool toolButtonMenu
+            property bool sairRoteiro: false
             property string iconName: toolButtonMenu ? 'home' : 'back'
             id: buttonLeft
             icon.source: 'qrc:/media/icons/back.svg'
@@ -30,8 +41,11 @@ ToolBar {
             }
 
             onClicked: {
-                stackViewPages.pop()
-                //Corrigir para voltar para a home ou pagina anterior em caso de roteiro
+                if (sairRoteiro){
+                    confirmExit.open();
+                }else{
+                    stackViewPages.pop()
+                }
             }
         }
         Label {
