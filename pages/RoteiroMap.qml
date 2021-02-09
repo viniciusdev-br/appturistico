@@ -20,6 +20,7 @@ PageGlobal {
     property bool primeiroFeito: false
     property double initialLatitude
     property double initialLongitude
+    property int  totalPontos: 0
     title: qsTr('Roteiro')
     Material.theme: Material.Light
     visible: true
@@ -48,6 +49,7 @@ PageGlobal {
                         initialLongitude = data[i]['longitude'];
                         primeiroFeito = true;
                     }
+                    totalPontos += 1
                 }
             }
         }
@@ -99,8 +101,8 @@ PageGlobal {
             onPositionChanged: {
                 posicaoDispositivo.start()
                 var coordenada = posicaoDispositivo.position.coordinate;
-                latitudeMaker = coordenada.latitude
-                lonigitudeMaker = coordenada.longitude
+                latitudeMaker = coordenada.latitude;
+                lonigitudeMaker = coordenada.longitude;
                 console.log("Coordenadass: " + coordenada.latitude, coordenada.longitude);
                 for( var i=0; i<mapufpa.mapItems.length; i++){
                     console.log("Cordenada mercator: " + mapufpa.mapItems[i].center);
@@ -134,7 +136,7 @@ PageGlobal {
         anchors.right: parent.right
         anchors.margins: 5
         radius: 5
-        text: visitado + "/20"
+        text: visitado + "/" + totalPontos
     }
 
     Popup{
@@ -167,7 +169,13 @@ PageGlobal {
                     font.pointSize: 14
                 }
                 onClicked: {
-                    visitado = visitado + 1
+                    if (visitado < totalPontos){
+                        visitado = visitado + 1;
+                    }
+                    if (visitado == totalPontos){
+                        botaoVisitado.text = "Roteiro Concluído";
+                        parent.enabled = false;
+                    }
                 }
             }
         }

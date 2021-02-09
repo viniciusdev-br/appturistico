@@ -31,7 +31,7 @@ ApplicationWindow{
 
         Timer{
             //Executará após 1.5s e depois não irá se repetir
-            interval: 1500
+            interval: 1000
             running: true
             repeat: false
             onTriggered: mainLoader.source = "qrc:/pages/StartCanvas.qml"
