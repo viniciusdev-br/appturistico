@@ -21,7 +21,7 @@ ToolBar {
             property bool toolButtonMenu
             property string iconName: toolButtonMenu ? 'home' : 'back'
             id: buttonLeft
-            icon.source: 'qrc:/media/icons/' + iconName + '.svg'
+            icon.source: 'qrc:/media/icons/back.svg'
             icon.color: 'white'
             height: parent.height
 
@@ -30,10 +30,8 @@ ToolBar {
             }
 
             onClicked: {
-                if (toolButtonMenu) {
-                    stackViewPages.pop()
-                    //Corrigir para voltar para a home ou pagina anterior em caso de roteiro
-                }
+                stackViewPages.pop()
+                //Corrigir para voltar para a home ou pagina anterior em caso de roteiro
             }
         }
         Label {

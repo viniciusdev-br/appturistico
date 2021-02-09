@@ -8,9 +8,10 @@ import QtQml 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Material 2.15
 import QtWebView 1.15
-//Importando as configurações do arquivo .js
+import QtQuick.Dialogs 1.2
 import "../js/config.js" as CF
 import '../components'
+
 PageGlobal {
     property string targetRoteiroLast: ""
     property url site: ""
@@ -171,6 +172,7 @@ PageGlobal {
                 onClicked: {
                     if (visitado < totalPontos){
                         visitado = visitado + 1;
+                        popup.close();
                     }
                     if (visitado == totalPontos){
                         botaoVisitado.text = "Roteiro Concluído";
@@ -179,6 +181,14 @@ PageGlobal {
                 }
             }
         }
+    }
+    MessageDialog {
+        id: confirmExit
+        title: "Roteiro"
+        text: "Confirmar saida."
+        informativeText: "Você quer sair do Roteiro?"
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        Component.onCompleted: visible = true
     }
 }
 
