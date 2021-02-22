@@ -6,6 +6,8 @@ import QtQuick.Layouts 1.12
 import '../components'
 
 PageGlobal {
+    property string objectName:  "Home"
+
     ColumnLayout {
         width: parent.width/3.5
         anchors.centerIn: parent

@@ -32,7 +32,7 @@ ToolBar {
             property bool sairRoteiro: false
             property string iconName: toolButtonMenu ? 'home' : 'back'
             id: buttonLeft
-            icon.source: 'qrc:/media/icons/back.svg'
+            icon.source: stackViewPages.currentItem.objectName == "Home" ? 'qrc:/media/icons/home.svg' : 'qrc:/media/icons/back.svg'
             icon.color: 'white'
             height: parent.height
 
@@ -41,7 +41,7 @@ ToolBar {
             }
 
             onClicked: {
-                if (sairRoteiro){
+                if (stackViewPages.currentItem.objectName == "RoteiroMap"){
                     confirmExit.open();
                 }else{
                     stackViewPages.pop()

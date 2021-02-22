@@ -18,7 +18,6 @@ Page{
         id: toolBar
         Material.foreground: "white"
         title: root.currentItem ? root.currentItem.title : ""
-        toolButtonMenu: root.currentItem ? false : true
     }
 
     StackView{

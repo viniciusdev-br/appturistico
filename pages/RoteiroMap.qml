@@ -13,6 +13,7 @@ import "../js/config.js" as CF
 import '../components'
 
 PageGlobal {
+    property string objectName: "RoteiroMap"
     property string targetRoteiroLast: ""
     property url site: ""
     property double latitudeMaker
