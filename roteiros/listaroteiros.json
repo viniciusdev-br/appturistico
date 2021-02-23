@@ -3,19 +3,19 @@
     "tag": "UFPA",
     "bairro": "Guamá",
     "detalhes": "A Universidade Federal do Pará, traz conhecimento e inovação......",
-    "imagemApoio": "qrc:/roteiros/media/ufpa.jpg"
+    "imagemApoio": "qrc:/roteiros/ufpa/media/ufpa.jpg"
 },
 {
     "roteiro":"ver-o-peso",
     "tag": "Ver-o-Peso",
     "bairro": "Campina",
     "detalhes": "Maior feira a céu aberto do Brasil.",
-    "imagemApoio": "qrc:/roteiros/media/ver-o-peso.jpg"
+    "imagemApoio": "qrc:/roteiros/ver-o-peso/media/ver-o-peso.jpg"
 },
 {
     "roteiro":"cidade-velha",
     "tag": "Cidade Velha",
     "bairro": "Cidade Velha",
     "detalhes": "Uma antiga cidade que é velha e antes de ser velha era nova",
-    "imagemApoio": "qrc:/roteiros/media/cidade-velha.jpg"
+    "imagemApoio": "qrc:/roteiros/cidade-velha/media/cidade-velha.jpg"
 }]

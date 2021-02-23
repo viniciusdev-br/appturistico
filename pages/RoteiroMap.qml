@@ -34,7 +34,8 @@ PageGlobal {
     Component.onCompleted: {
         console.log(targetRoteiro)
         var xhr = new XMLHttpRequest;
-        xhr.open("GET", "../roteiros/"+targetRoteiroLast+".json");
+        var pathRoteiro = "../roteiros/" + targetRoteiroLast;
+        xhr.open("GET", pathRoteiro + "/points.json");
         xhr.onreadystatechange = function() {
             if ( xhr.readyState === XMLHttpRequest.DONE ){
                 var data = JSON.parse(xhr.responseText);
@@ -44,7 +45,7 @@ PageGlobal {
                         latitude: data[i]['latitude'],
                         longitude: data[i]['longitude'],
                         titulo: data[i]['titulo'],
-                        descricao: data[i]['descricao']
+                        descricao: pathRoteiro + "/content/" + data[i]['descricao']
                     });
                     if ( primeiroFeito == false ){
                         initialLatitude = data[i]['latitude'];
@@ -155,7 +156,7 @@ PageGlobal {
                 width: parent.width
                 height: parent.height*0.85
                 id:pagweb
-                url: site
+                url: Qt.resolvedUrl(site)
             }
             RoundButton{
                 anchors.horizontalCenter: parent.horizontalCenter
