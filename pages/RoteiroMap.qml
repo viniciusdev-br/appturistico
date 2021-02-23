@@ -64,7 +64,14 @@ PageGlobal {
         anchors.fill: parent
         plugin: mapUniversidade
         center: QtPositioning.coordinate(initialLatitude, initialLongitude)
-        zoomLevel: 16
+
+        zoomLevel: isPortrait ? 16 : 15
+        maximumZoomLevel: 19
+        minimumZoomLevel: 15
+        gesture.enabled: true
+        gesture.acceptedGestures: MapGestureArea.PinchGesture | MapGestureArea.FlickGesture
+                                  | MapGestureArea.PanGesture | MapGestureArea.RotationGesture
+
         Instantiator {
             //Cria os mapCircles a partir do model
             model: model
