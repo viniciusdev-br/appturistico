@@ -113,7 +113,7 @@ PageGlobal {
                 var coordenada = posicaoDispositivo.position.coordinate;
                 latitudeMaker = coordenada.latitude; lonigitudeMaker = coordenada.longitude;
                 for( var i=0; i<mapufpa.mapItems.length; i++){
-                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) < minimunDistancePOI){
+                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > minimunDistancePOI){
                         mapufpa.mapItems[i].habilitar = true;
                         mapufpa.mapItems[i].color = "#009688";
                         if (coordenada.distanceTo(mapufpa.mapItems[i].center) < 50){
@@ -158,7 +158,17 @@ PageGlobal {
             minimunDistancePOI = 1000000000000;
         }
     }
-
+    Button{
+        id: addContabilizador
+        text: "Contar mais 1 ponto"
+        anchors.bottom: enabledButtonPOI.top
+        anchors.left: enabledButtonPOI.left
+        onClicked: {
+            if (visitado < totalPontos){
+                visitado = visitado + 1
+            }
+        }
+    }
     Popup{
         id: popup
         width: mapufpa.width*0.70; height: mapufpa.height*0.75
