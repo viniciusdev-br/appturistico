@@ -6,7 +6,6 @@ import "../js/config.js" as CF
 Item {
     property bool isPortrait: this.width < this.height
     property bool toolButtonMenu: true
-    property bool sairRoteiro: false
     property string title: CF.title
     property string targetRoteiro: ""
     anchors.left: parent ? parent.left : undefined

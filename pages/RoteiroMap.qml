@@ -23,11 +23,11 @@ PageGlobal {
     property double initialLatitude
     property double initialLongitude
     property int  totalPontos: 0
+    property int minimunDistancePOI: 100
     title: qsTr('Roteiro')
     Material.theme: Material.Light
     visible: true
     Plugin{id: mapUniversidade; name: "osm"}
-    sairRoteiro: true
     ListModel{ id: model }
     ListModel{ id: positionMapCircle}
 
@@ -104,15 +104,14 @@ PageGlobal {
             onPositionChanged: {
                 posicaoDispositivo.start()
                 var coordenada = posicaoDispositivo.position.coordinate;
-                latitudeMaker = coordenada.latitude;
-                lonigitudeMaker = coordenada.longitude;
-                console.log("Coordenadass: " + coordenada.latitude, coordenada.longitude);
+                latitudeMaker = coordenada.latitude; lonigitudeMaker = coordenada.longitude;
                 for( var i=0; i<mapufpa.mapItems.length; i++){
-                    console.log("Cordenada mercator: " + mapufpa.mapItems[i].center);
-                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > 100){
-                        console.log("Esta distante");
+                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) < minimunDistancePOI){
                         mapufpa.mapItems[i].habilitar = true;
                         mapufpa.mapItems[i].color = "#009688";
+                        if (coordenada.distanceTo(mapufpa.mapItems[i].center) < 50){
+                            visitado = visitado + 1
+                        }
                     }
                 }
             }
@@ -142,6 +141,17 @@ PageGlobal {
         text: visitado + "/" + totalPontos
     }
 
+    Button{
+        id: enabledButtonPOI
+        text: "Habilitar POIs"
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.margins: 5
+        onClicked: {
+            minimunDistancePOI = 1000000000000;
+        }
+    }
+
     Popup{
         id: popup
         width: mapufpa.width*0.70; height: mapufpa.height*0.75
@@ -149,49 +159,13 @@ PageGlobal {
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         padding: 0
         anchors.centerIn: parent
-        Column{
-            anchors.fill: parent
-            spacing: 5
-            WebView{
-                width: parent.width
-                height: parent.height*0.85
-                id:pagweb
-                url: Qt.resolvedUrl(site)
-            }
-            RoundButton{
-                anchors.horizontalCenter: parent.horizontalCenter
-                radius: 5
-                width: botaoVisitado.width + 20
-                height: botaoVisitado.height + 20
-                palette.button: CF.backgroundColor
-                Text {
-                    id: botaoVisitado
-                    anchors.centerIn: parent
-                    color: "white"
-                    text: "Visitado"
-                    font.pointSize: 14
-                }
-                onClicked: {
-                    if (visitado < totalPontos){
-                        visitado = visitado + 1;
-                        popup.close();
-                    }
-                    if (visitado == totalPontos){
-                        botaoVisitado.text = "Roteiro Concluído";
-                        parent.enabled = false;
-                    }
-                }
-            }
+        WebView{
+            width: parent.width
+            height: parent.height
+            id:pagweb
+            url: Qt.resolvedUrl(site)
         }
     }
-//    MessageDialog {
-//        id: confirmExit
-//        title: "Roteiro"
-//        text: "Confirmar saida."
-//        informativeText: "Você quer sair do Roteiro?"
-//        standardButtons: StandardButton.Ok | StandardButton.Cancel
-//        Component.onCompleted: visible = true
-//    }
 }
 
 
