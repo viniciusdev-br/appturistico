@@ -27,7 +27,10 @@ PageGlobal {
     title: qsTr('Roteiro')
     Material.theme: Material.Light
     visible: true
-    Plugin{id: mapUniversidade; name: "osm"}
+    Plugin{
+        id: mapUniversidade;
+        name: "osm"
+    }
     ListModel{ id: model }
     ListModel{ id: positionMapCircle}
 
@@ -64,6 +67,7 @@ PageGlobal {
         anchors.fill: parent
         plugin: mapUniversidade
         center: QtPositioning.coordinate(initialLatitude, initialLongitude)
+        copyrightsVisible: false
 
         zoomLevel: isPortrait ? 16 : 15
         maximumZoomLevel: 19
@@ -113,7 +117,7 @@ PageGlobal {
                 var coordenada = posicaoDispositivo.position.coordinate;
                 latitudeMaker = coordenada.latitude; lonigitudeMaker = coordenada.longitude;
                 for( var i=0; i<mapufpa.mapItems.length; i++){
-                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > minimunDistancePOI){
+                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) < minimunDistancePOI){
                         mapufpa.mapItems[i].habilitar = true;
                         mapufpa.mapItems[i].color = "#009688";
                         if (coordenada.distanceTo(mapufpa.mapItems[i].center) < 50){
@@ -136,16 +140,21 @@ PageGlobal {
         }
     }
 
-    RoundButton{
-        id: checkList
-        icon {
-            source: "qrc:/media/icons/map-marker.svg"
-        }
+    Rectangle{
+        id:checkList
+        width: textCheckList.width; height: textCheckList.height
+        color: '#E7E7E7'
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.margins: 5
         radius: 5
-        text: visitado + "/" + totalPontos
+        Text {
+            padding: 10
+            id: textCheckList
+            text: visitado + '/' + totalPontos
+            font.pixelSize: 14
+            font.bold: true
+        }
     }
 
     Button{
@@ -155,7 +164,7 @@ PageGlobal {
         anchors.left: parent.left
         anchors.margins: 5
         onClicked: {
-            minimunDistancePOI = 1000000000000;
+            minimunDistancePOI = 99999999999999999999;
         }
     }
     Button{
@@ -163,6 +172,7 @@ PageGlobal {
         text: "Contar mais 1 ponto"
         anchors.bottom: enabledButtonPOI.top
         anchors.left: enabledButtonPOI.left
+        anchors.bottomMargin: 5
         onClicked: {
             if (visitado < totalPontos){
                 visitado = visitado + 1
@@ -181,6 +191,15 @@ PageGlobal {
             height: parent.height
             id:pagweb
             url: Qt.resolvedUrl(site)
+        }
+    }
+    Label {
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        anchors.margins: 1
+        text: qsTr('© Contribuidores do OpenStreetMap')
+        font {
+            pixelSize: 12
         }
     }
 }

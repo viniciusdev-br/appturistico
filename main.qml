@@ -30,7 +30,7 @@ ApplicationWindow{
         source: "qrc:/components/SplashScreenTurismo.qml"
 
         Timer{
-            //Executará após 1.5s e depois não irá se repetir
+            //Executará após 1.0s e depois não irá se repetir
             interval: 1000
             running: true
             repeat: false
