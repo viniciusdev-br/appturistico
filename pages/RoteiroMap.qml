@@ -9,6 +9,7 @@ import QtQuick.Layouts 1.15
 import QtQuick.Controls.Material 2.15
 import QtWebView 1.15
 import QtQuick.Dialogs 1.2
+import QtGraphicalEffects 1.15
 import "../js/config.js" as CF
 import '../components'
 
@@ -141,19 +142,39 @@ PageGlobal {
     }
 
     Rectangle{
+        id:maskIcons
+        width: 100
+        height: 100
+        visible: false
+        color: CF.backgroundColor
+    }
+
+    Rectangle{
         id:checkList
-        width: textCheckList.width; height: textCheckList.height
+        width: textCheckList.width + checkListImage.width; height: textCheckList.height
         color: '#E7E7E7'
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.margins: 5
         radius: 5
-        Text {
-            padding: 10
-            id: textCheckList
-            text: visitado + '/' + totalPontos
-            font.pixelSize: 14
-            font.bold: true
+        Row{
+            Image {
+                id: checkListImage
+                width: textCheckList.width * 0.7; height: checkList.height * 0.8
+                source: "qrc:/media/icons/map-marker.svg"
+                smooth: true
+                layer.enabled: true
+                layer.effect: OpacityMask{
+                    maskSource: maskIcons
+                }
+            }
+            Text {
+                padding: 10
+                id: textCheckList
+                text: visitado + '/' + totalPontos
+                font.pixelSize: 14
+                font.bold: true
+            }
         }
     }
 
