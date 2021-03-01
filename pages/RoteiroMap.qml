@@ -151,26 +151,33 @@ PageGlobal {
 
     Rectangle{
         id:checkList
-        width: textCheckList.width + checkListImage.width; height: textCheckList.height
+        width: textCheckList.width + iconeContador.width; height: textCheckList.height
         color: '#E7E7E7'
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.margins: 5
         radius: 5
         Row{
-            Image {
-                id: checkListImage
-                width: textCheckList.width * 0.7; height: checkList.height * 0.8
-                source: "qrc:/media/icons/map-marker.svg"
-                smooth: true
-                layer.enabled: true
-                layer.effect: OpacityMask{
-                    maskSource: maskIcons
+            Item {
+                id: iconeContador
+                width: checkListImage.width; height: checkListImage.height
+                Image {
+                    id: checkListImage
+                    width: textCheckList.width * 0.7; height: checkList.height * 0.8
+                    source: "qrc:/media/icons/map-marker.svg"
+                    smooth: true
+                    visible: false
+                }
+                ColorOverlay {
+                    anchors.fill: checkListImage
+                    source: checkListImage
+                    color: CF.backgroundColor
                 }
             }
             Text {
                 padding: 10
                 id: textCheckList
+                color: CF.backgroundColor
                 text: visitado + '/' + totalPontos
                 font.pixelSize: 14
                 font.bold: true
