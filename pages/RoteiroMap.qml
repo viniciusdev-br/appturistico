@@ -141,30 +141,40 @@ PageGlobal {
         }
     }
 
-    Rectangle{
-        id:maskIcons
-        width: 100
-        height: 100
-        visible: false
-        color: CF.backgroundColor
+    RoundButton{
+        id: centralizador
+        padding: 16
+        radius: 100
+        anchors.margins: 5
+        anchors.right: parent.right
+        anchors.bottom: checkList.top
+        icon.source: 'qrc:/media/icons/maker-user.svg'
+        icon.color: CF.backgroundColor
+        palette.button: 'white'
+        onClicked: {
+            var coordenada = posicaoDispositivo.position.coordinate
+            mapufpa.center = coordenada
+        }
     }
 
     Rectangle{
         id:checkList
         width: textCheckList.width + iconeContador.width; height: textCheckList.height
-        color: '#E7E7E7'
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.margins: 5
         radius: 5
-        Row{
-            Item {
+        RowLayout {
+            anchors.fill: parent
+            spacing: 0
+            Rectangle {
                 id: iconeContador
                 width: checkListImage.width; height: checkListImage.height
+                anchors.centerIn: parent/2
                 Image {
                     id: checkListImage
                     width: textCheckList.width * 0.7; height: checkList.height * 0.8
-                    source: "qrc:/media/icons/map-marker.svg"
+                    source: 'qrc:/media/icons/map-marker.svg'
                     smooth: true
                     visible: false
                 }
@@ -174,13 +184,14 @@ PageGlobal {
                     color: CF.backgroundColor
                 }
             }
+
             Text {
-                padding: 10
                 id: textCheckList
                 color: CF.backgroundColor
                 text: visitado + '/' + totalPontos
                 font.pixelSize: 14
                 font.bold: true
+                padding: 8
             }
         }
     }
