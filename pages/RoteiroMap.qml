@@ -194,6 +194,12 @@ PageGlobal {
                 padding: 8
             }
         }
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                mapufpa.center = QtPositioning.coordinate(initialLatitude, initialLongitude)
+            }
+        }
     }
 
     Button{
