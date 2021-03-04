@@ -151,14 +151,18 @@ PageGlobal {
 
     RoundButton{
         id: centralizador
-        padding: 16
+        padding: 12
         radius: 100
         anchors.margins: 5
         anchors.right: parent.right
         anchors.bottom: checkList.top
-        icon.source: 'qrc:/media/icons/maker-user.svg'
-        icon.color: CF.backgroundColor
         palette.button: 'white'
+        icon {
+            source: 'qrc:/media/icons/maker-user.svg'
+            height: 30
+            width: icon.height/2
+            color: CF.backgroundColor
+        }
         onClicked: {
             var coordenada = posicaoDispositivo.position.coordinate
             mapufpa.center = coordenada
