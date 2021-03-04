@@ -77,6 +77,14 @@ PageGlobal {
         gesture.acceptedGestures: MapGestureArea.PinchGesture | MapGestureArea.FlickGesture
                                   | MapGestureArea.PanGesture | MapGestureArea.RotationGesture
 
+        Behavior on center {
+            CoordinateAnimation {
+                duration: 1000
+                easing.overshoot: 0.5
+                easing.type: Easing.InOutBack
+            }
+        }
+
         Instantiator {
             //Cria os mapCircles a partir do model
             model: model
