@@ -32,4 +32,4 @@ contains(ANDROID_TARGET_ARCH,) {
 }
 
 ANDROID_ABIS = armeabi-v7a
-android: include(/home/vinicius/Android/Sdk/android_openssl/openssl.pri)
+android: include(/home/fbsfdb/Android/Sdk/android_openssl/openssl.pri)

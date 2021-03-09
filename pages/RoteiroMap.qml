@@ -126,10 +126,11 @@ PageGlobal {
                 var coordenada = posicaoDispositivo.position.coordinate;
                 latitudeMaker = coordenada.latitude; lonigitudeMaker = coordenada.longitude;
                 for( var i=0; i<mapufpa.mapItems.length; i++){
-                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) < minimunDistancePOI){
+                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > minimunDistancePOI){
                         mapufpa.mapItems[i].habilitar = true;
                         mapufpa.mapItems[i].color = "#009688";
                         if (coordenada.distanceTo(mapufpa.mapItems[i].center) < 50){
+                            //Bug de contabilização do aplicativo, criar variavel booleana para verificar se é a primeira vez que a posição se encontra dentro do POI
                             visitado = visitado + 1
                         }
                     }
@@ -221,7 +222,12 @@ PageGlobal {
         anchors.left: parent.left
         anchors.margins: 5
         onClicked: {
-            minimunDistancePOI = 99999999999999999999;
+//            minimunDistancePOI = 99999999999999999999;
+//            posicaoDispositivo.active = false;
+//            for( var i=0; i< mapufpa.mapItems.length; i++){
+//                mapufpa.mapItems[i].habilitar = true;
+//                mapufpa.mapItems[i].color = "#009688";
+//            }
         }
     }
     Button{
