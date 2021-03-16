@@ -51,5 +51,6 @@
         <file>roteiros/cidade-velha/media/mirante-do-rio.mp4</file>
         <file>roteiros/cidade-velha/media/mirante.jpeg</file>
         <file>roteiros/ver-o-peso/media/ver-o-peso.jpg</file>
+        <file>media/icons/gps-location.svg</file>
     </qresource>
 </RCC>

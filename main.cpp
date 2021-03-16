@@ -11,11 +11,11 @@ int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle("Material");
     app.setOrganizationName("CCSL UFPA");
     app.setOrganizationDomain("ccsl.ufpa.br");
     app.setApplicationName("appturistico");
     app.setApplicationVersion("0.5");
-
     QQmlApplicationEngine engine;
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));

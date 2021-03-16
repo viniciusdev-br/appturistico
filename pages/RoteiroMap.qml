@@ -70,7 +70,7 @@ PageGlobal {
         center: QtPositioning.coordinate(initialLatitude, initialLongitude)
         copyrightsVisible: false
 
-        zoomLevel: isPortrait ? 16 : 15
+        zoomLevel: isPortrait ? 17 : 16
         maximumZoomLevel: 19
         minimumZoomLevel: 15
         gesture.enabled: true
@@ -100,7 +100,7 @@ PageGlobal {
                     opacity: 0.5
                     border.width: 0
                     center: QtPositioning.coordinate(model.latitude, model.longitude)
-                    radius: 50
+                    radius: 20
                     property alias habilitar: toqueTurismo.enabled
                     MouseArea{
                         id: toqueTurismo
@@ -129,10 +129,7 @@ PageGlobal {
                     if (coordenada.distanceTo(mapufpa.mapItems[i].center) > minimunDistancePOI){
                         mapufpa.mapItems[i].habilitar = true;
                         mapufpa.mapItems[i].color = "#009688";
-                        if (coordenada.distanceTo(mapufpa.mapItems[i].center) < 50){
-                            //Bug de contabilização do aplicativo, criar variavel booleana para verificar se é a primeira vez que a posição se encontra dentro do POI
-                            visitado = visitado + 1
-                        }
+                        visitado = visitado + 1
                     }
                 }
             }
@@ -152,16 +149,13 @@ PageGlobal {
 
     RoundButton{
         id: centralizador
-        padding: 12
-        radius: 100
+        padding: 16
         anchors.margins: 5
         anchors.right: parent.right
         anchors.bottom: checkList.top
-        palette.button: 'white'
+        Material.background: "white"
         icon {
-            source: 'qrc:/media/icons/maker-user.svg'
-            height: 30
-            width: icon.height/2
+            source: 'qrc:/media/icons/gps-location.svg'
             color: CF.backgroundColor
         }
         onClicked: {
@@ -182,7 +176,7 @@ PageGlobal {
             spacing: 0
             Rectangle {
                 id: iconeContador
-                width: checkListImage.width; height: checkListImage.height
+                width: checkListImage.width; height: checkListImage.height + 5
                 anchors.centerIn: parent/2
                 Image {
                     id: checkListImage
@@ -215,43 +209,42 @@ PageGlobal {
         }
     }
 
-    Button{
-        id: enabledButtonPOI
-        text: "Habilitar POIs"
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.margins: 5
-        onClicked: {
+//    Button{
+//        id: enabledButtonPOI
+//        text: "Habilitar POIs"
+//        anchors.bottom: parent.bottom
+//        anchors.left: parent.left
+//        anchors.margins: 5
+//        onClicked: {
 //            minimunDistancePOI = 99999999999999999999;
 //            posicaoDispositivo.active = false;
 //            for( var i=0; i< mapufpa.mapItems.length; i++){
 //                mapufpa.mapItems[i].habilitar = true;
 //                mapufpa.mapItems[i].color = "#009688";
 //            }
-        }
-    }
-    Button{
-        id: addContabilizador
-        text: "Contar mais 1 ponto"
-        anchors.bottom: enabledButtonPOI.top
-        anchors.left: enabledButtonPOI.left
-        anchors.bottomMargin: 5
-        onClicked: {
-            if (visitado < totalPontos){
-                visitado = visitado + 1
-            }
-        }
-    }
+//        }
+//    }
+//    Button{
+//        id: addContabilizador
+//        text: "Contar mais 1 ponto"
+//        anchors.bottom: enabledButtonPOI.top
+//        anchors.left: enabledButtonPOI.left
+//        anchors.bottomMargin: 5
+//        onClicked: {
+//            if (visitado < totalPontos){
+//                visitado = visitado + 1
+//            }
+//        }
+//    }
     Popup{
         id: popup
-        width: mapufpa.width*0.70; height: mapufpa.height*0.75
+        width: mapufpa.width*0.50; height: mapufpa.height*0.50
         modal: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         padding: 0
         anchors.centerIn: parent
         WebView{
-            width: parent.width
-            height: parent.height
+            anchors.fill: parent
             id:pagweb
             url: Qt.resolvedUrl(site)
         }

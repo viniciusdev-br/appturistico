@@ -142,7 +142,7 @@ PageGlobal {
                             radius: 5
                             width: botaoStart.width + 20
                             height: botaoStart.height + 20
-                            palette.button: CF.backgroundColor
+                            Material.background: CF.backgroundColor
                             Text {
                                 id: botaoStart
                                 anchors.centerIn: parent
