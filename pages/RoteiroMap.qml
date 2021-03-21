@@ -24,7 +24,6 @@ PageGlobal {
     property double initialLatitude
     property double initialLongitude
     property int  totalPontos: 0
-    property int minimunDistancePOI: 100
     title: qsTr('Roteiro')
     Material.theme: Material.Light
     visible: true
@@ -126,7 +125,7 @@ PageGlobal {
                 var coordenada = posicaoDispositivo.position.coordinate;
                 latitudeMaker = coordenada.latitude; lonigitudeMaker = coordenada.longitude;
                 for( var i=0; i<mapufpa.mapItems.length; i++){
-                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > minimunDistancePOI){
+                    if (coordenada.distanceTo(mapufpa.mapItems[i].center) > 100){
                         mapufpa.mapItems[i].habilitar = true;
                         mapufpa.mapItems[i].color = "#009688";
                         visitado = visitado + 1
@@ -172,7 +171,6 @@ PageGlobal {
         anchors.margins: 5
         radius: 5
         RowLayout {
-            anchors.fill: parent
             spacing: 0
             Rectangle {
                 id: iconeContador
@@ -209,36 +207,10 @@ PageGlobal {
         }
     }
 
-//    Button{
-//        id: enabledButtonPOI
-//        text: "Habilitar POIs"
-//        anchors.bottom: parent.bottom
-//        anchors.left: parent.left
-//        anchors.margins: 5
-//        onClicked: {
-//            minimunDistancePOI = 99999999999999999999;
-//            posicaoDispositivo.active = false;
-//            for( var i=0; i< mapufpa.mapItems.length; i++){
-//                mapufpa.mapItems[i].habilitar = true;
-//                mapufpa.mapItems[i].color = "#009688";
-//            }
-//        }
-//    }
-//    Button{
-//        id: addContabilizador
-//        text: "Contar mais 1 ponto"
-//        anchors.bottom: enabledButtonPOI.top
-//        anchors.left: enabledButtonPOI.left
-//        anchors.bottomMargin: 5
-//        onClicked: {
-//            if (visitado < totalPontos){
-//                visitado = visitado + 1
-//            }
-//        }
-//    }
+
     Popup{
         id: popup
-        width: mapufpa.width*0.50; height: mapufpa.height*0.50
+        width: mapufpa.width*0.80; height: mapufpa.height*0.75
         modal: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         padding: 0

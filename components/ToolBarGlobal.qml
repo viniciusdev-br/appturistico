@@ -1,7 +1,6 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Controls.Material 2.15
-import Qt.labs.platform 1.0
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Dialogs 1.2
 import '../js/config.js' as CF
 import '../pages'
 ToolBar {
@@ -16,9 +15,12 @@ ToolBar {
     }
     MessageDialog {
         id: confirmExit
-        title: "Sair?"
+//        buttons: MessageDialog.Ok
+//        text: "The document has been modified."
+        title: "Roteiro"
+        text: "Confirmar saida."
         informativeText: "Você quer sair do Roteiro?"
-        buttons: MessageDialog.Ok | MessageDialog.Cancel
+        standardButtons: StandardButton.Ok | StandardButton.Cancel
         onAccepted: {
             stackViewPages.pop()
             sairRoteiro = false
@@ -42,14 +44,14 @@ ToolBar {
 
             onClicked: {
                 if (stackViewPages.currentItem.objectName == "RoteiroMap"){
-                    confirmExit.open()
+                    confirmExit.open();
                 }else{
                     stackViewPages.pop()
                 }
             }
         }
         Label {
-            font.pointSize: 14
+            font.pointSize: 24
             id: labelName
             color: CF.titlePageColor
             horizontalAlignment: Qt.AlignHCenter

@@ -88,6 +88,7 @@ PageGlobal {
         Row{
             id: rowConteudo
             width: parent.width; height: parent.height * 0.6
+            spacing: 10
             ListView{
                 width: rowConteudo.width
                 height: 300
@@ -133,14 +134,14 @@ PageGlobal {
                             horizontalAlignment: Text.AlignHCenter
                             width: rowConteudo.width
                             wrapMode: Text.WordWrap
-                            font.pointSize: 14
+                            font.pointSize: 18
                             text: qsTr(detalhes)
                             color: '#565B5B'
                         }
                         RoundButton{
                             anchors.horizontalCenter: parent.horizontalCenter
                             radius: 5
-                            width: botaoStart.width + 20
+                            width: botaoStart.width + 40
                             height: botaoStart.height + 20
                             Material.background: CF.backgroundColor
                             Text {
@@ -148,7 +149,7 @@ PageGlobal {
                                 anchors.centerIn: parent
                                 color: "white"
                                 text: "Iniciar roteiro!"
-                                font.pointSize: 14
+                                font.pointSize: 24
                             }
                             onClicked: {
                                 root.currentItem.title = "Pontos Turísticos"

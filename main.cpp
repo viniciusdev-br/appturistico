@@ -6,7 +6,8 @@
 #include <QtQml>
 #include <QQuickStyle>
 #include <QQmlApplicationEngine>
-//#include <QtWebView>
+#include <QtWebView>
+#include <QtSvg>
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
