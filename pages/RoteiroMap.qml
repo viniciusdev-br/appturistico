@@ -68,7 +68,6 @@ PageGlobal {
         plugin: mapUniversidade
         center: QtPositioning.coordinate(initialLatitude, initialLongitude)
         copyrightsVisible: false
-
         zoomLevel: isPortrait ? 17 : 16
         maximumZoomLevel: 19
         minimumZoomLevel: 15
@@ -108,7 +107,6 @@ PageGlobal {
                         onClicked: {
                             popup.open();
                             site = model.descricao;
-                            console.log(site)
                         }
                     }
                 }
@@ -119,16 +117,20 @@ PageGlobal {
         PositionSource{
             id: posicaoDispositivo
             active: true
-            updateInterval: 1000
+            updateInterval: 500
+
             onPositionChanged: {
                 posicaoDispositivo.start()
                 var coordenada = posicaoDispositivo.position.coordinate;
                 latitudeMaker = coordenada.latitude; lonigitudeMaker = coordenada.longitude;
+                visitado = 0
                 for( var i=0; i<mapufpa.mapItems.length; i++){
                     if (coordenada.distanceTo(mapufpa.mapItems[i].center) > 100){
                         mapufpa.mapItems[i].habilitar = true;
                         mapufpa.mapItems[i].color = "#009688";
-                        visitado = visitado + 1
+                        if (visitado < totalPontos){
+                            visitado = visitado + 1
+                        }
                     }
                 }
             }
@@ -140,6 +142,14 @@ PageGlobal {
                 id: makerIcon
                 source: "qrc:/media/icons/maker-user.svg"
             }
+            Behavior on coordinate {
+                CoordinateAnimation{
+                    duration: 500
+                    easing.overshoot: 0.5
+                    easing.type: Easing.InOutBack
+                }
+            }
+
             coordinate: QtPositioning.coordinate(latitudeMaker, lonigitudeMaker)
             opacity: 0.7
             anchorPoint: Qt.point(makerIcon.width, makerIcon.height)
@@ -216,7 +226,7 @@ PageGlobal {
         padding: 0
         anchors.centerIn: parent
         WebView{
-            anchors.fill: parent
+            width: parent.width; height: parent.height
             id:pagweb
             url: Qt.resolvedUrl(site)
         }
