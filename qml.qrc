@@ -53,5 +53,7 @@
         <file>roteiros/ver-o-peso/media/ver-o-peso.jpg</file>
         <file>media/icons/gps-location.svg</file>
         <file>media/images/home-page-2.png</file>
+        <file>media/images/outros.png</file>
+        <file>media/images/ufpa.png</file>
     </qresource>
 </RCC>

@@ -8,13 +8,13 @@ import '../components'
 
 PageGlobal {
     property string objectName:  "Home"
-    ColumnLayout{
+    Column{
         anchors.fill: parent
-        spacing: 0
-        RowLayout{
-            Layout.topMargin: 0
-            Layout.topPadding: 0
-            Layout.fillWidth: true
+        spacing: 10
+        Row{
+            width: parent.width
+            height: maskRound.height
+            topPadding: 10
             Item{
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: 480*0.7; height: 640*0.6
@@ -39,9 +39,12 @@ PageGlobal {
                 }
             }
         }
-        RowLayout{
+        Row{
+            width: parent.width
+            height: iniciarRoteiroButton.height
             Button {
-                Layout.fillWidth: true
+                id: iniciarRoteiroButton
+                anchors.horizontalCenter: parent.horizontalCenter
                 icon.source: "../media/icons/compass-regular.svg"
                 text: "Roteiros"
                 Material.background: Material.Teal
@@ -52,9 +55,13 @@ PageGlobal {
                 }
             }
         }
-        RowLayout{
+        Row{
+            width: parent.width
+            height: configurationbutton.height
+            spacing: 10
             Button {
-                Layout.fillWidth: true
+                id: configurationbutton
+                anchors.horizontalCenter: parent.horizontalCenter
                 icon.source: "../media/icons/configuration.svg"
                 text: "Configurações"
                 Material.background: Material.Teal
@@ -65,7 +72,7 @@ PageGlobal {
                 }
             }
             Button{
-                Layout.fillWidth: true
+                width: configurationbutton.width
                 icon.source: "../media/icons/about.svg"
                 text: "Sobre"
                 Material.background: Material.Teal
