@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.12
 
 import '../components'
-
+import "../js/config.js" as CF
 PageGlobal {
     property string objectName:  "Home"
     Column{
@@ -59,13 +59,38 @@ PageGlobal {
             width: parent.width
             height: configurationbutton.height
             spacing: 10
+//            Item{
+//                width: 200
+//                height: 200
+//                Rectangle{
+//                    width: parent.width
+//                    height: parent.height
+//                    color: "white"
+//                }
+//                Rectangle{
+//                    color: CF.backgroundColor
+//                    width: parent.width
+//                    height: parent.height*0.2
+//                    anchors.bottom: parent.bottom
+//                    Text{
+//                        text: "Configurações"
+//                        color: "White"
+//                        anchors.centerIn: parent
+//                    }
+//                }
+//                MouseArea{
+//                    anchors.fill: parent
+//                    onClicked:{
+//                        stackViewPages.push("qrc:/pages/Configuration.qml")
+//                        root.currentItem.title = "Configurações"
+//                    }
+//                }
+//            }
             Button {
                 id: configurationbutton
                 anchors.horizontalCenter: parent.horizontalCenter
                 icon.source: "../media/icons/configuration.svg"
                 text: "Configurações"
-                Material.background: Material.Teal
-                Material.foreground: "white"
                 onClicked: {
                     stackViewPages.push("qrc:/pages/Configuration.qml")
                     root.currentItem.title = "Configurações"

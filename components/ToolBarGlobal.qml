@@ -15,8 +15,6 @@ ToolBar {
     }
     MessageDialog {
         id: confirmExit
-//        buttons: MessageDialog.Ok
-//        text: "The document has been modified."
         title: "Roteiro"
         text: "Confirmar saida."
         informativeText: "Você quer sair do Roteiro?"
