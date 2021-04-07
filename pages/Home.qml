@@ -8,18 +8,19 @@ import '../components'
 import "../js/config.js" as CF
 PageGlobal {
     property string objectName:  "Home"
+    id:pageHome
     Column{
         anchors.fill: parent
         spacing: 10
         Row{
             width: parent.width
-            height: maskRound.height
+            height: maskRoundImage.height
             topPadding: 10
             Item{
                 anchors.horizontalCenter: parent.horizontalCenter
-                width: 480*0.7; height: 640*0.6
+                width: 480*0.7; height: 640*0.7
                 Rectangle{
-                    id: maskRound
+                    id: maskRoundImage
                     width: parent.width
                     height: parent.height
                     radius: 14
@@ -35,7 +36,7 @@ PageGlobal {
                 OpacityMask{
                     anchors.fill: imagemHome
                     source: imagemHome
-                    maskSource: maskRound
+                    maskSource: maskRoundImage
                 }
             }
         }
@@ -46,7 +47,7 @@ PageGlobal {
                 id: iniciarRoteiroButton
                 anchors.horizontalCenter: parent.horizontalCenter
                 icon.source: "../media/icons/compass-regular.svg"
-                text: "Roteiros"
+                text: "Iniciar um Roteiro"
                 Material.background: Material.Teal
                 Material.foreground: "white"
                 onClicked: {
@@ -57,52 +58,61 @@ PageGlobal {
         }
         Row{
             width: parent.width
-            height: configurationbutton.height
-            spacing: 10
-//            Item{
-//                width: 200
-//                height: 200
-//                Rectangle{
-//                    width: parent.width
-//                    height: parent.height
-//                    color: "white"
-//                }
-//                Rectangle{
-//                    color: CF.backgroundColor
-//                    width: parent.width
-//                    height: parent.height*0.2
-//                    anchors.bottom: parent.bottom
-//                    Text{
-//                        text: "Configurações"
-//                        color: "White"
-//                        anchors.centerIn: parent
-//                    }
-//                }
-//                MouseArea{
-//                    anchors.fill: parent
-//                    onClicked:{
-//                        stackViewPages.push("qrc:/pages/Configuration.qml")
-//                        root.currentItem.title = "Configurações"
-//                    }
-//                }
-//            }
-            Button {
-                id: configurationbutton
+            height: parent.height*0.2
+            spacing: 60
+            Button{
+                id: configurationButton
+                width: parent.height
+                height: parent.height
                 anchors.horizontalCenter: parent.horizontalCenter
-                icon.source: "../media/icons/configuration.svg"
-                text: "Configurações"
-                onClicked: {
+                Image {
+                    id: configurationIcon
+                    source: "../media/images/outros.png"
+                    height: parent.height
+                    width: parent.width
+                }
+                Rectangle{
+                    color: CF.backgroundColor
+                    width: parent.width
+                    height: parent.height*0.2
+                    anchors.bottom: parent.bottom
+                    radius: 4
+                    Text{
+                        text: "Configurações"
+                        color: "White"
+                        anchors.centerIn: parent
+                    }
+                }
+                onClicked:{
                     stackViewPages.push("qrc:/pages/Configuration.qml")
                     root.currentItem.title = "Configurações"
                 }
             }
             Button{
-                width: configurationbutton.width
-                icon.source: "../media/icons/about.svg"
-                text: "Sobre"
-                Material.background: Material.Teal
-                Material.foreground: "white"
-                onClicked: {
+                id: aboutButton
+                width: parent.height
+                height: parent.height
+                anchors.horizontalCenter: parent.horizontalCenter
+                Image {
+                    id: aboutIcon
+                    source: "../media/images/ufpa.png"
+                    fillMode: Image.PreserveAspectFit
+                    height: parent.height
+                    width: parent.width
+                }
+                Rectangle{
+                    color: CF.backgroundColor
+                    width: parent.width
+                    height: parent.height*0.2
+                    anchors.bottom: parent.bottom
+                    radius: 4
+                    Text{
+                        text: "Sobre"
+                        color: "White"
+                        anchors.centerIn: parent
+                    }
+                }
+                onClicked:{
                     stackViewPages.push("qrc:/pages/About.qml")
                     root.currentItem.title = "Sobre"
                 }
