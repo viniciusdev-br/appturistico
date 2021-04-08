@@ -59,10 +59,10 @@ PageGlobal {
         RowLayout{
             width: parent.width
             height: parent.height*0.2
-            spacing: 60
+            spacing: 30
             Item {
-                        Layout.fillWidth: implicitWidth > 0 ? false : true
-                    }
+                Layout.fillWidth: implicitWidth > 0 ? false : true
+            }
             Button{
                 id: configurationButton
                 Layout.preferredWidth: parent.height
