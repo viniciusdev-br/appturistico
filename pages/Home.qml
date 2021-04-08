@@ -56,15 +56,17 @@ PageGlobal {
                 }
             }
         }
-        Row{
+        RowLayout{
             width: parent.width
             height: parent.height*0.2
             spacing: 60
+            Item {
+                        Layout.fillWidth: implicitWidth > 0 ? false : true
+                    }
             Button{
                 id: configurationButton
-                width: parent.height
-                height: parent.height
-                anchors.horizontalCenter: parent.horizontalCenter
+                Layout.preferredWidth: parent.height
+                Layout.preferredHeight: parent.height
                 Image {
                     id: configurationIcon
                     source: "../media/images/outros.png"
@@ -90,9 +92,8 @@ PageGlobal {
             }
             Button{
                 id: aboutButton
-                width: parent.height
-                height: parent.height
-                anchors.horizontalCenter: parent.horizontalCenter
+                Layout.preferredWidth: parent.height
+                Layout.preferredHeight: parent.height
                 Image {
                     id: aboutIcon
                     source: "../media/images/ufpa.png"
@@ -116,6 +117,9 @@ PageGlobal {
                     stackViewPages.push("qrc:/pages/About.qml")
                     root.currentItem.title = "Sobre"
                 }
+            }
+            Item {
+                Layout.fillWidth: implicitWidth > 0 ? false : true
             }
         }
 
