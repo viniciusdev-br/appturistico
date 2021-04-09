@@ -12,32 +12,31 @@ PageGlobal {
     Column{
         anchors.fill: parent
         spacing: 10
-        Row{
-            width: parent.width
-            height: maskRoundImage.height
-            topPadding: 10
-            Item{
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: 480*0.7; height: 640*0.7
-                Rectangle{
-                    id: maskRoundImage
-                    width: parent.width
-                    height: parent.height
-                    radius: 14
-                    visible: false
-                }
-                Image {
-                    id: imagemHome
-                    width: parent.width
-                    height: parent.height
-                    source: "../media/images/home-page-2.png"
-                    visible: false
-                }
-                OpacityMask{
-                    anchors.fill: imagemHome
-                    source: imagemHome
-                    maskSource: maskRoundImage
-                }
+        Item{
+            width: 1
+            height: 5
+        }
+        Item{
+            anchors.horizontalCenter: parent.horizontalCenter
+            width: CF.width*0.7; height: CF.heigth*0.7
+            Rectangle{
+                id: maskRoundImage
+                width: parent.width
+                height: parent.height
+                radius: 14
+                visible: false
+            }
+            Image {
+                id: imagemHome
+                width: parent.width
+                height: parent.height
+                source: "../media/images/home-page-2.png"
+                visible: false
+            }
+            OpacityMask{
+                anchors.fill: imagemHome
+                source: imagemHome
+                maskSource: maskRoundImage
             }
         }
         Row{
@@ -122,47 +121,5 @@ PageGlobal {
                 Layout.fillWidth: implicitWidth > 0 ? false : true
             }
         }
-
-
     }
-
-
-
-
-
-//    ColumnLayout {
-//        width: parent.width/2.5
-//        anchors.centerIn: parent
-//        Button {
-//            Layout.fillWidth: true
-//            icon.source: "../media/icons/compass-regular.svg"
-//            text: "Roteiros"
-//            Material.background: Material.Teal
-//            Material.foreground: "white"
-//            onClicked: {
-//                stackViewPages.push("qrc:/pages/SelectRoteiro.qml")
-//                root.currentItem.title = "Roteiros ativos"
-//            }
-//        }
-//        Button {
-//            Layout.fillWidth: true
-//            icon.source: "../media/icons/configuration.svg"
-//            text: "Configurações"
-//            Material.background: Material.Teal
-//            Material.foreground: "white"
-//            onClicked: {
-//                stackViewPages.push("qrc:/pages/Configuration.qml")
-//            }
-//        }
-//        Button{
-//            Layout.fillWidth: true
-//            icon.source: "../media/icons/about.svg"
-//            text: "Sobre"
-//            Material.background: Material.Teal
-//            Material.foreground: "white"
-//            onClicked: {
-//                stackViewPages.push("qrc:/pages/About.qml")
-//            }
-//        }
-//    }
 }
