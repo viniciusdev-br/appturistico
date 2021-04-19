@@ -55,5 +55,15 @@
         <file>media/images/home-page-2.png</file>
         <file>media/images/outros.png</file>
         <file>media/images/ufpa.png</file>
+        <file>roteiros/belle-epoque/content/cinema-olympia.html</file>
+        <file>roteiros/belle-epoque/content/edificio-manoel.html</file>
+        <file>roteiros/belle-epoque/points.json</file>
+        <file>roteiros/belle-epoque/media/cinema-olympia.jpg</file>
+        <file>roteiros/belle-epoque/media/avenia-nazare.jpg</file>
+        <file>roteiros/belle-epoque/media/edificio-manoel.jpg</file>
+        <file>roteiros/belle-epoque/media/palacete-bolonha.jpg</file>
+        <file>roteiros/belle-epoque/media/praca-da-republica.jpg</file>
+        <file>roteiros/belle-epoque/media/praca-da-sereia.jpg</file>
+        <file>roteiros/belle-epoque/content/palacete-bolonha.html</file>
     </qresource>
 </RCC>

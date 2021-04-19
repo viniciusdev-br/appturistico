@@ -18,4 +18,12 @@
     "bairro": "Cidade Velha",
     "detalhes": "Uma antiga cidade que é velha e antes de ser velha era nova",
     "imagemApoio": "qrc:/roteiros/cidade-velha/media/cidade-velha.jpg"
-}]
+},
+{
+    "roteiro":"belle-epoque",
+    "tag": "Legado da Belle Époque",
+    "bairro": "Belém",
+    "detalhes": "Um período de grandes mudanças na arquitetura de Belém devido à comercialização da borracha",
+    "imagemApoio": "qrc:/roteiros/belle-epoque/media/cinema-olympia.jpg"
+}
+]

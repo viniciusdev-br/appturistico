@@ -2,23 +2,17 @@
     "latitude": -1.4519086,
     "longitude": -48.5032379,
     "titulo": "Solar da Beira",
-    "descricao": "solar-da-beira.html",
-    "bairro": "Campina",
-    "detalhes": "Solar da beira"
+    "descricao": "solar-da-beira.html"
 },
 {
     "latitude": -1.4537743,
     "longitude": -48.5038372,
     "titulo": "Praça do Relógio",
-    "descricao": "praca-do-relogio.html",
-    "bairro": "Campina",
-    "detalhes": "Um fabuloso Mirante para mirar nos hozirontes"
+    "descricao": "praca-do-relogio.html"
 },
 {
     "latitude": -1.44996,
     "longitude": -48.5016128,
     "titulo": "Estação das Docas",
-    "descricao": "estacao-das-docas.html",
-    "bairro": "Campina",
-    "detalhes": "Solar da beira"
+    "descricao": "estacao-das-docas.html"
 }]

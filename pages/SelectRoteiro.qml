@@ -126,7 +126,7 @@ PageGlobal {
                                 color: CF.backgroundColor
                                 font.pointSize: 18;
                                 font.bold: true
-                                text: "Bairro " + bairro
+                                text: bairro
                             }
                         }
                         Text {

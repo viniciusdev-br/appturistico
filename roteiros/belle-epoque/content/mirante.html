@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function funcao(){
+            document.getElementById("midia").innerHTML = '<img src="../media/mirante.jpeg" alt="imagem da estrutura">'
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Mirante</h1>
+    <div>
+        <center id="midia">
+            <video width="300" controls> 
+                <source src="../media/mirante-do-rio.mp4" type="video/mp4">
+            </video>     
+        </center>
+    </div>
+    <center><input type="button" onclick="funcao()" value="Veja imagens!"></center>
+    <p style="text-align: justify;">Uma breve descrição do <b>mirante</b>. Agora vamos colocar conteúdo. Lorem ipsum morbi massa tincidunt proin aptent bibendum egestas, pharetra pellentesque ipsum nunc turpis quisque auctor mauris luctus, consectetur suscipit potenti mattis auctor nostra eget. viverra pharetra dictum vitae aliquam amet maecenas hendrerit placerat pharetra mattis, nostra nibh sagittis id gravida maecenas sed litora ultricies, leo fames vehicula urna fames risus sollicitudin non lorem. rhoncus tempus sagittis nec sem pretium ultricies massa at ullamcorper ut elit habitasse, nec mauris pretium imperdiet curabitur morbi gravida blandit commodo fermentum.</p>
+</body>
+
+</html>
