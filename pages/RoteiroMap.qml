@@ -7,9 +7,9 @@ import QtMultimedia 5.15
 import QtQml 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls.Material 2.15
-import QtWebView 1.15
 import QtQuick.Dialogs 1.2
 import QtGraphicalEffects 1.15
+import QtWebView 1.1
 import "../js/config.js" as CF
 import '../components'
 
@@ -228,7 +228,7 @@ PageGlobal {
         WebView{
             width: parent.width; height: parent.height
             id:pagweb
-            url: Qt.resolvedUrl(site)
+            url: "qrc:/roteiros/belle-epoque/content/cinema-olympia.html"
         }
     }
     Label {

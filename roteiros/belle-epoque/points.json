@@ -15,4 +15,17 @@
     "longitude": -48.4912017,
     "titulo": "Palacete Bolonha",
     "descricao": "palacete-bolonha.html"
-}]
+},
+{
+    "latitude": -1.4541525,
+    "longitude": -48.4952162,
+    "titulo": "Praça da Sereia",
+    "descricao": "praca-da-sereia.html"
+},
+{
+    "latitude": -1.4560479,
+    "longitude": -48.4981576,
+    "titulo": "Praça da República",
+    "descricao": "praca-da-republica.html"
+}
+]

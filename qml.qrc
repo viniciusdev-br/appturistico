@@ -59,11 +59,13 @@
         <file>roteiros/belle-epoque/content/edificio-manoel.html</file>
         <file>roteiros/belle-epoque/points.json</file>
         <file>roteiros/belle-epoque/media/cinema-olympia.jpg</file>
-        <file>roteiros/belle-epoque/media/avenia-nazare.jpg</file>
+        <file>roteiros/belle-epoque/media/avenida-nazare.jpg</file>
         <file>roteiros/belle-epoque/media/edificio-manoel.jpg</file>
         <file>roteiros/belle-epoque/media/palacete-bolonha.jpg</file>
         <file>roteiros/belle-epoque/media/praca-da-republica.jpg</file>
         <file>roteiros/belle-epoque/media/praca-da-sereia.jpg</file>
         <file>roteiros/belle-epoque/content/palacete-bolonha.html</file>
+        <file>roteiros/belle-epoque/content/praca-da-sereia.html</file>
+        <file>roteiros/belle-epoque/content/praca-da-republica.html</file>
     </qresource>
 </RCC>
