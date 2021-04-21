@@ -59,7 +59,7 @@
         <file>roteiros/belle-epoque/content/edificio-manoel.html</file>
         <file>roteiros/belle-epoque/points.json</file>
         <file>roteiros/belle-epoque/media/cinema-olympia.jpg</file>
-        <file>roteiros/belle-epoque/media/avenida-nazare.jpg</file>
+        <file>roteiros/belle-epoque/media/bar-do-parque.jpg</file>
         <file>roteiros/belle-epoque/media/edificio-manoel.jpg</file>
         <file>roteiros/belle-epoque/media/palacete-bolonha.jpg</file>
         <file>roteiros/belle-epoque/media/praca-da-republica.jpg</file>
@@ -67,5 +67,16 @@
         <file>roteiros/belle-epoque/content/palacete-bolonha.html</file>
         <file>roteiros/belle-epoque/content/praca-da-sereia.html</file>
         <file>roteiros/belle-epoque/content/praca-da-republica.html</file>
+        <file>roteiros/belle-epoque/content/bar-do-parque.html</file>
+        <file>roteiros/belle-epoque/content/IEEP.html</file>
+        <file>roteiros/belle-epoque/media/IEEP.jpg</file>
+        <file>roteiros/belle-epoque/media/teatro-da-paz.jpg</file>
+        <file>roteiros/belle-epoque/content/rua-santo-antonio.html</file>
+        <file>roteiros/belle-epoque/media/rua-santo-antonio.jpg</file>
+        <file>roteiros/belle-epoque/content/predio-da-cdp.html</file>
+        <file>roteiros/belle-epoque/media/predio-da-cdp.jpg</file>
+        <file>roteiros/belle-epoque/content/teatro-da-paz.html</file>
+        <file>roteiros/belle-epoque/content/casa-paris-namerica.html</file>
+        <file>roteiros/belle-epoque/media/casa-paris-namerica.jpg</file>
     </qresource>
 </RCC>

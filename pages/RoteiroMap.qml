@@ -228,7 +228,7 @@ PageGlobal {
         WebView{
             width: parent.width; height: parent.height
             id:pagweb
-            url: "qrc:/roteiros/belle-epoque/content/cinema-olympia.html"
+            url: site
         }
     }
     Label {

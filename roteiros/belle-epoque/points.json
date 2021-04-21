@@ -23,9 +23,84 @@
     "descricao": "praca-da-sereia.html"
 },
 {
-    "latitude": -1.4560479,
-    "longitude": -48.4981576,
+
+    "latitude": -1.452181,
+    "longitude":-48.494499,
     "titulo": "Praça da República",
     "descricao": "praca-da-republica.html"
+},
+{
+    "latitude": -1.4537018,
+    "longitude": -48.4941061,
+    "titulo": "Bar do Parque",
+    "descricao": "bar-do-parque.html"
+},
+{
+    "latitude": -1.454403,
+    "longitude": -48.492964,
+    "titulo": "IEEP",
+    "descricao": "IEEP.html"
+},
+{
+    "latitude": -1.451244,
+    "longitude": -48.496720,
+    "titulo": "Av. Presidente Vargasssssssssssssssssssssssssssssssssssssssssssssssss",
+    "descricao": "bar-do-parque.html"
+    //ac
+
+
+
+},
+{
+    "latitude": -1.453783,
+    "longitude":  -48.492551,
+    "titulo": "Casa da Linguagem",
+    "descricao": "bar-do-parque.html"
+
+
+
+},
+{
+    "latitude": -1.453475,
+    "longitude": -48.490863,
+    "titulo": "Avenida Nazaréeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "descricao": "bar-do-parque.html"
+
+
+
+
+},
+{
+    "latitude": -1.453146,
+    "longitude": -48.493850,
+    "titulo": "Teatro da Paz",
+    "descricao": "teatro-da-paz.html"
+},
+{
+
+    "latitude": -1.449679,
+    "longitude": -48.498353,
+    "titulo": "Rua Santo Antôniooooooooooooooooooooooooooooooooooooooooo",
+    "descricao": "rua-santo-antonio.html"
+
+
+
+
+
+
+
+},
+{
+    "latitude": -1.448044,
+    "longitude": -48.498395,
+    "titulo": "Prédio da CDP",
+    "descricao": "predio-da-cdp.html"
+},
+{
+
+    "latitude": -1.450893,
+    "longitude":  -48.499648,
+    "titulo": "Casa Paris n'América",
+    "descricao": "bar-do-parque.html"
 }
 ]
