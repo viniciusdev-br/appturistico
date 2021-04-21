@@ -78,5 +78,11 @@
         <file>roteiros/belle-epoque/content/teatro-da-paz.html</file>
         <file>roteiros/belle-epoque/content/casa-paris-namerica.html</file>
         <file>roteiros/belle-epoque/media/casa-paris-namerica.jpg</file>
+        <file>roteiros/belle-epoque/content/presidente-vargas.html</file>
+        <file>roteiros/belle-epoque/media/presidente-vargas.jpg</file>
+        <file>roteiros/belle-epoque/content/casa-da-linguagem.html</file>
+        <file>roteiros/belle-epoque/media/casa-da-linguagem.jpg</file>
+        <file>roteiros/belle-epoque/content/avenida-nazare.html</file>
+        <file>roteiros/belle-epoque/media/avenida-nazare.jpg</file>
     </qresource>
 </RCC>
