@@ -1,24 +1,26 @@
 [{
-    "latitude": -1.453803,
-    "longitude": -48.4960529,
+    "latitude": -1.4538182,
+    "longitude": -48.4940007,
     "titulo": "Cinema Olympia",
     "descricao": "cinema-olympia.html"
 },
 {
-    "latitude": -1.4540726,
-    "longitude": -48.4948927,
+    "latitude": -1.454024,
+    "longitude": -48.492679,
     "titulo": "Edifício Manoel Pinto da Silva",
     "descricao": "edificio-manoel.html"
 },
 {
-    "latitude": -1.4523106,
-    "longitude": -48.4912017,
+
+    "latitude": -1.452033,
+    "longitude":  -48.490875,
     "titulo": "Palacete Bolonha",
     "descricao": "palacete-bolonha.html"
 },
 {
-    "latitude": -1.4541525,
-    "longitude": -48.4952162,
+
+    "latitude": -1.454151,
+    "longitude": -48.493238,
     "titulo": "Praça da Sereia",
     "descricao": "praca-da-sereia.html"
 },
@@ -57,7 +59,7 @@
     "latitude": -1.453475,
     "longitude": -48.490863,
     "titulo": "Avenida Nazaréeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
-    "descricao": "bar-do-parque.html"
+    "descricao": "avenida-nazare.html"
 },
 {
     "latitude": -1.453146,
