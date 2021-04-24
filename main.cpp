@@ -8,11 +8,12 @@
 #include <QQmlApplicationEngine>
 #include <QtWebView>
 #include <QtSvg>
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QGuiApplication app(argc, argv);
     QtWebView::initialize();
+    QGuiApplication app(argc, argv);
     QQuickStyle::setStyle("Material");
     app.setOrganizationName("CCSL UFPA");
     app.setOrganizationDomain("ccsl.ufpa.br");

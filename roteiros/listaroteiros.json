@@ -2,28 +2,28 @@
     "roteiro":"ufpa",
     "tag": "UFPA",
     "bairro": "Guamá",
-    "detalhes": "A Universidade Federal do Pará, traz conhecimento e inovação......",
+    "detalhes": "   A Universidade Federal do Pará, traz conhecimento e inovação......",
     "imagemApoio": "qrc:/roteiros/ufpa/media/ufpa.jpg"
 },
 {
     "roteiro":"ver-o-peso",
     "tag": "Ver-o-Peso",
     "bairro": "Campina",
-    "detalhes": "Maior feira a céu aberto do Brasil.",
+    "detalhes": "   Maior feira a céu aberto do Brasil.",
     "imagemApoio": "qrc:/roteiros/ver-o-peso/media/ver-o-peso.jpg"
 },
 {
     "roteiro":"cidade-velha",
     "tag": "Cidade Velha",
     "bairro": "Cidade Velha",
-    "detalhes": "Uma antiga cidade que é velha e antes de ser velha era nova",
+    "detalhes": "   Uma antiga cidade que é velha e antes de ser velha era nova",
     "imagemApoio": "qrc:/roteiros/cidade-velha/media/cidade-velha.jpg"
 },
 {
     "roteiro":"belle-epoque",
-    "tag": "Legado da Belle Époque",
+    "tag": "Legado da Belle Èpoque",
     "bairro": "Belém",
-    "detalhes": "Um período de grandes mudanças na arquitetura de Belém devido à comercialização da borracha",
-    "imagemApoio": "qrc:/roteiros/belle-epoque/media/cinema-olympia.jpg"
+    "detalhes": "   Um período de grandes mudanças na arquitetura de Belém devido à comercialização da borracha",
+    "imagemApoio": "qrc:/roteiros/belle-epoque/media/capa-belle.jpg"
 }
 ]

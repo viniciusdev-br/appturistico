@@ -10,6 +10,7 @@ import QtQuick.Controls.Material 2.15
 import QtQuick.Dialogs 1.2
 import QtGraphicalEffects 1.15
 import QtWebView 1.1
+//import QtWebEngine 1.8
 import "../js/config.js" as CF
 import '../components'
 
@@ -225,9 +226,9 @@ PageGlobal {
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
         padding: 0
         anchors.centerIn: parent
-        WebView{
+        WebView {
             width: parent.width; height: parent.height
-            id:pagweb
+            id: pagweb
             url: site
         }
     }

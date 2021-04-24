@@ -3,6 +3,7 @@ QT += quickcontrols2
 QT += webview
 QT += qml
 QT += svg
+
 OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11
 
@@ -18,6 +19,8 @@ RESOURCES += qml.qrc \
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH = /usr/lib/qt/qml/QtWebView
+#Impossoivel usar webengine no android por ser pesado
+#QML_IMPORT_PATH = /usr/lib/qt/qml/QtWebEngine
 
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =
@@ -33,4 +36,4 @@ contains(ANDROID_TARGET_ARCH,) {
 }
 
 ANDROID_ABIS = armeabi-v7a
-android: include(/home/fbsfdb/Android/Sdk/android_openssl/openssl.pri)
+android: include(/home/viniciuss/Android/Sdk/android_openssl/openssl.pri)
