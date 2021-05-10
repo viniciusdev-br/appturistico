@@ -3,6 +3,7 @@ QT += quickcontrols2
 QT += webview
 QT += qml
 QT += svg
+QT += core
 
 OPENSSL_LIBS='-L/opt/ssl/lib -lssl -lcrypto' ./configure -openssl-linked
 CONFIG += c++11

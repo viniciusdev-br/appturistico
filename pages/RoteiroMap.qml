@@ -13,7 +13,6 @@ import QtWebView 1.1
 //import QtWebEngine 1.8
 import "../js/config.js" as CF
 import '../components'
-
 PageGlobal {
     property string objectName: "RoteiroMap"
     property string targetRoteiroLast: ""
@@ -38,7 +37,7 @@ PageGlobal {
     Component.onCompleted: {
         console.log(targetRoteiro)
         var xhr = new XMLHttpRequest;
-        var pathRoteiro = "../roteiros/" + targetRoteiroLast;
+        var pathRoteiro = "qrc:/roteiros/" + targetRoteiroLast;
         xhr.open("GET", pathRoteiro + "/points.json");
         xhr.onreadystatechange = function() {
             if ( xhr.readyState === XMLHttpRequest.DONE ){
@@ -229,7 +228,7 @@ PageGlobal {
         WebView {
             width: parent.width; height: parent.height
             id: pagweb
-            url: site
+            url: conteudo
         }
     }
     Label {
